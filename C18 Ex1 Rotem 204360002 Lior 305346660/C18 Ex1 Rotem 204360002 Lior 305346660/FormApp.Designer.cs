@@ -5,7 +5,6 @@
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        /// rotem test git
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
