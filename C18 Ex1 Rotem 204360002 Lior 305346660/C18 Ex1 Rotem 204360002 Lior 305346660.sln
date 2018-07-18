@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C18 Ex1 Rotem 204360002 Lior 305346660", "C18 Ex1 Rotem 204360002 Lior 305346660\C18 Ex1 Rotem 204360002 Lior 305346660.csproj", "{8DD8161F-7B2B-4D50-9A95-2BF34A32AE72}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C18 Ex1 Rotem 204360002 Lior 305346660", "C18 Ex1 Rotem 204360002 Lior 305346660\C18 Ex1 Rotem 204360002 Lior 305346660.csproj", "{F87DEEA4-C387-48D7-8EAC-06A404F29662}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8DD8161F-7B2B-4D50-9A95-2BF34A32AE72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8DD8161F-7B2B-4D50-9A95-2BF34A32AE72}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8DD8161F-7B2B-4D50-9A95-2BF34A32AE72}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8DD8161F-7B2B-4D50-9A95-2BF34A32AE72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F87DEEA4-C387-48D7-8EAC-06A404F29662}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F87DEEA4-C387-48D7-8EAC-06A404F29662}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F87DEEA4-C387-48D7-8EAC-06A404F29662}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F87DEEA4-C387-48D7-8EAC-06A404F29662}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
