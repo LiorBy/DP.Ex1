@@ -22,7 +22,7 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FormApp());
         }
     }
 }
