@@ -85,7 +85,7 @@
 
         private System.Windows.Forms.Button connectButton;
         private System.Windows.Forms.PictureBox profilePicture;
-          private System.Windows.Forms.CheckBox rememberMecheckBox;
+        private System.Windows.Forms.CheckBox rememberMecheckBox;
      }
 }
 
