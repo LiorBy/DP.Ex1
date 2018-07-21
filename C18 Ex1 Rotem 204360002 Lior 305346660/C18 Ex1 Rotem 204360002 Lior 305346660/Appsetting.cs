@@ -35,6 +35,7 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
                }
           }
 
+
           public static Appsettings LoadFromFile()
           {  
                if (s_Appsettings==null)
