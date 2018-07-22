@@ -27,7 +27,8 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
             /// Use the FacebookService.Login method to display the login form to any user who wish to use this application.
             /// You can then save the result.AccessToken for future auto-connect to this user:
             LoginResult result = FacebookService.Login("229517584351841", /// (desig patter's "Design Patterns Course App 2.4" app)
-                "public_profile");
+                "public_profile"
+                );
                
             // These are NOT the complete list of permissions. Other permissions for example:
             // "user_birthday", "user_education_history", "user_hometown", "user_likes","user_location","user_relationships","user_relationship_details","user_religion_politics", "user_videos", "user_website", "user_work_history", "email","read_insights","rsvp_event","manage_pages"
@@ -59,6 +60,6 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
             loginAndInit();
         }
 
-        
+       
     }
 }
