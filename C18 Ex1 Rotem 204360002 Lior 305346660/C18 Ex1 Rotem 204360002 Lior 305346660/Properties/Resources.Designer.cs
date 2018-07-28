@@ -59,5 +59,14 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Appsetting {
+            get {
+                return ResourceManager.GetString("Appsetting", resourceCulture);
+            }
+        }
     }
 }

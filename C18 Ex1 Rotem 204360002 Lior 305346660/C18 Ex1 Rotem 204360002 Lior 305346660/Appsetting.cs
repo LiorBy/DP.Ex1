@@ -28,7 +28,9 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
 
           public void SavetoFile()
           {
-               using (Stream stram = new FileStream(@"E:\Appsetting.xml", FileMode.Truncate))
+
+            //string sttrings = "@" + Path.GetFullPath(Properties.Resources.Appsetting);
+            using (Stream stram = new FileStream(@"D:\temp\‏‏Appsettings.xml", FileMode.Truncate))
                {
                     XmlSerializer serializer = new XmlSerializer(this.GetType());
                     serializer.Serialize(stram, this);
@@ -37,15 +39,16 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
 
 
           public static Appsettings LoadFromFile()
-          {  
-               if (s_Appsettings==null)
+          {
+            //string sttrings = 
+            if (s_Appsettings==null)
                {
 
                     lock (padlock)
                     {
                          if (s_Appsettings == null)
                          {
-                              using (Stream stram = new FileStream(@"E:\Appsetting.xml", FileMode.Open))
+                              using (Stream stram = new FileStream(@"D:\temp\‏‏Appsettings.xml", FileMode.Open))
                               {
                                    XmlSerializer serializer = new XmlSerializer(typeof(Appsettings));
                                    s_Appsettings = serializer.Deserialize(stram) as Appsettings;
