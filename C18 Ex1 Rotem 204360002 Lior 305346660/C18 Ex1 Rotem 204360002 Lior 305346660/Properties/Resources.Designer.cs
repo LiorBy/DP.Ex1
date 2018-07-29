@@ -61,11 +61,31 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _888039_logo_512x512 {
+            get {
+                object obj = ResourceManager.GetObject("_888039_logo_512x512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
         internal static string Appsetting {
             get {
                 return ResourceManager.GetString("Appsetting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap facebook_ads_infographic {
+            get {
+                object obj = ResourceManager.GetObject("facebook_ads_infographic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

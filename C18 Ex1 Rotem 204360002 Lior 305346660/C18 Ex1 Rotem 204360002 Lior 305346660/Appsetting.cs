@@ -10,54 +10,63 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
 {
      public sealed class Appsettings
      {
-
+          private static readonly object sr_padlock = new object();    
           private static Appsettings s_Appsettings = null;
-          private static readonly object padlock = new object();
-          public Point LastwindowLocation { get; set; }
-          public Size LastWindowSize { get; set; }
-          public bool RememberMe { get; set; }
-          public string lastAccesToken { get; set; }
+
+          public Point m_LastwindowLocation { get; set; }
+
+          public Size m_LastWindowSize { get; set; }
+
+          public bool m_RememberMe { get; set; }
+
+          public string m_LastAccesToken { get; set; }
 
           private Appsettings()
           {
-               LastwindowLocation = new Point(50, 50);
-               LastWindowSize = new Size(1000, 500);
-               RememberMe = false;
-               lastAccesToken = null;
+               m_LastwindowLocation = new Point(50, 50);
+               m_LastWindowSize = new Size(1000, 500);
+               m_RememberMe = false;
+               m_LastAccesToken = null;
           }
-
-          public void SavetoFile()
-          {
-
-            //string sttrings = "@" + Path.GetFullPath(Properties.Resources.Appsetting);
-            using (Stream stram = new FileStream(@"D:\temp\‏‏Appsettings.xml", FileMode.Truncate))
-               {
-                    XmlSerializer serializer = new XmlSerializer(this.GetType());
-                    serializer.Serialize(stram, this);
-               }
-          }
-
 
           public static Appsettings LoadFromFile()
           {
-            //string sttrings = 
-            if (s_Appsettings==null)
-               {
+               string path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
 
-                    lock (padlock)
+               if (s_Appsettings == null)
+               {
+                    lock (sr_padlock)
                     {
                          if (s_Appsettings == null)
                          {
-                              using (Stream stram = new FileStream(@"D:\temp\‏‏Appsettings.xml", FileMode.Open))
+                              if (File.Exists(path + @"\Appsetting.xml"))
                               {
-                                   XmlSerializer serializer = new XmlSerializer(typeof(Appsettings));
-                                   s_Appsettings = serializer.Deserialize(stram) as Appsettings;
+                                   using (Stream stram = new FileStream(path + @"\Appsetting.xml", FileMode.Open))
+                                   {
+                                        XmlSerializer serializer = new XmlSerializer(typeof(Appsettings));
+                                        s_Appsettings = serializer.Deserialize(stram) as Appsettings;
+                                   }
                               }
+                              else
+                              {
+                                   s_Appsettings = new Appsettings();
+                              }                         
                          }
                     }
                }
                
                return s_Appsettings;
           }
+
+          public void SavetoFile()
+          {
+              string path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+
+               using (Stream stram = new FileStream(path + @"\Appsetting.xml", FileMode.Create))
+               {
+                    XmlSerializer serializer = new XmlSerializer(this.GetType());
+                    serializer.Serialize(stram, this);
+               }
+          }         
      }
 }

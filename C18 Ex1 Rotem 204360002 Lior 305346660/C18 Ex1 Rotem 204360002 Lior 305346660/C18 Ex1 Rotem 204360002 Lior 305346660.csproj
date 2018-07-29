@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Appsetting.cs" />
+    <Compile Include="FriendListToFile.cs" />
     <Compile Include="FormApp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +85,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Appsetting.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\facebook-ads-infographic.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
