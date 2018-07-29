@@ -19,7 +19,7 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
     public partial class FormApp : Form
     {
           private readonly Appsettings m_Appsettings;
-          private List<FriendListToFile> m_FriendsFromFile;         
+          private List<string> m_FriendsFromFile;         
           private User m_LoggedInUser;
           private LoginResult m_loginResult;
 
@@ -57,9 +57,8 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
 
                using (Stream stram = new FileStream(path + string.Format(@"\Friends of {0}.xml", m_LoggedInUser.Name), FileMode.Open))
                {
-                    XmlSerializer serializer = new XmlSerializer(typeof(List<FriendListToFile>));
-                    List<FriendListToFile> friends = new List<FriendListToFile>();
-                    m_FriendsFromFile = serializer.Deserialize(stram) as List<FriendListToFile>;
+                    XmlSerializer serializer = new XmlSerializer(typeof(List<string>));
+                    m_FriendsFromFile = serializer.Deserialize(stram) as List<string>;
                }
           }
 
@@ -71,16 +70,14 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
                {             
                      using (Stream stram = new FileStream(path + string.Format(@"\Friends of {0}.xml", m_LoggedInUser.Name), FileMode.Create))
                     {
-                         XmlSerializer serializer = new XmlSerializer(typeof(List<FriendListToFile>));
-                         List<FriendListToFile> friends = new List<FriendListToFile>();
+                         XmlSerializer serializer = new XmlSerializer(typeof(List<string>));
+                         List<string> friends = new List<string>();
 
                          foreach (User friend in m_LoggedInUser.Friends)
                          {
-                              FriendListToFile currentfriend = new FriendListToFile();
-                              currentfriend.Name = friend.Name;
-                              friends.Add(currentfriend);
+                              friends.Add(friend.Name);
                          }
-
+                    
                          serializer.Serialize(stram, friends);
                     }
                }             
@@ -304,19 +301,13 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
                {          
                     loadfriendfromfile();
                     List<string> AllfriendsNames = new List<string>();
-                    List<string> AllfriendsNamesFromFile = new List<string>();
-
+                  
                     foreach (User friend in m_LoggedInUser.Friends)
                     {     
                          AllfriendsNames.Add(friend.Name);
                     }
-
-                    foreach (FriendListToFile friend in m_FriendsFromFile)
-                    { 
-                         AllfriendsNamesFromFile.Add(friend.Name);
-                    }
-                     
-                    var missingFriends = AllfriendsNamesFromFile.Except(AllfriendsNames);
+     
+                    var missingFriends = m_FriendsFromFile.Except(AllfriendsNames);
                     if (missingFriends.Count<string>() > 0 )
                     {
                          //////////someone in the friendlist had left
