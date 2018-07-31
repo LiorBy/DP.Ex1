@@ -16,15 +16,19 @@ using System.IO;
 
 namespace C18_Ex1_Rotem_204360002_Lior_305346660
 {
-    public partial class FormApp : Form
+    public partial class FaceApp : Form
     {
           private readonly Appsettings m_Appsettings;
           private List<string> m_FriendsFromFile;         
           private User m_LoggedInUser;
           private LoginResult m_loginResult;
-
-          public FormApp()
+          private List<Image> m_friendImeges = new List<Image>();
+          private string m_welcomLabelMassage;
+          public FaceApp()
           {
+            int h = Screen.PrimaryScreen.WorkingArea.Height;
+            int w = Screen.PrimaryScreen.WorkingArea.Width;
+            this.ClientSize = new Size(w, h);
             InitializeComponent();
             m_Appsettings = Appsettings.LoadFromFile();               
             setFormSize();
@@ -47,8 +51,10 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
                {
                     m_loginResult = FacebookService.Connect(m_Appsettings.m_LastAccesToken);
                     m_LoggedInUser = m_loginResult.LoggedInUser;
-                    fetchUserInfo();                 
-               }
+                    fetchUserInfo();
+                    m_welcomLabelMassage = string.Format("Welcome back\n{0}", m_LoggedInUser.Name);
+                    welcomLabel.Text = m_welcomLabelMassage;
+            }
           }
 
           private void loadfriendfromfile()
@@ -60,6 +66,7 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
                     XmlSerializer serializer = new XmlSerializer(typeof(List<string>));
                     m_FriendsFromFile = serializer.Deserialize(stram) as List<string>;
                }
+            saveFriendsProfilePics();
           }
 
           private void saveFriendsToFile()
@@ -154,6 +161,7 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
             {
                 m_LoggedInUser = m_loginResult.LoggedInUser;
                 fetchUserInfo();
+               
             }
             else
             {
@@ -163,36 +171,35 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
         }
 
           private void fetchUserInfo()
-          {              
-               profilePicture.LoadAsync(m_LoggedInUser.PictureNormalURL);      
-               //if (m_LoggedInUser.Posts.Count > 0)
-               //{
-               //    textBoxStatus.Text = m_LoggedInUser.Posts[0].Message;
-               //}
-          }
+          {
+              profilePicture.LoadAsync(m_LoggedInUser.PictureLargeURL);
+              saveFriendsProfilePics();
+        }
 
           private void connectButton_Click(object sender, EventArgs e)
           {
               loginAndInit();
               saveFriendsToFile();
+              m_welcomLabelMassage = string.Format("Welcome\n{0}", m_LoggedInUser.Name);
+              welcomLabel.Text = m_welcomLabelMassage;
+              //saveFriendsProfilePics();
           }
 
           private void button1_Click(object sender, EventArgs e)
           {
                if (m_LoggedInUser != null)
                {
-                    fetchFriends();
                     fetchPosts();
                }
           }
 
           private void fetchFriends()
         {
-            listBox1.Items.Clear();
-            listBox1.DisplayMember = "Name";
+            lastPostsListBox.Items.Clear();
+            lastPostsListBox.DisplayMember = "Name";
             foreach (User friend in m_LoggedInUser.Friends)
             {
-                listBox1.Items.Add(friend);
+                lastPostsListBox.Items.Add(friend);
                 friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
             }
 
@@ -208,15 +215,15 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
             {
                 if (post.Message != null)
                 {
-                    listBox1.Items.Add(post.Message);
+                    lastPostsListBox.Items.Add(post.Message);
                 }
                 else if (post.Caption != null)
                 {
-                    listBox1.Items.Add(post.Caption);
+                    lastPostsListBox.Items.Add(post.Caption);
                 }
                 else
                 {
-                    listBox1.Items.Add(string.Format("[{0}]", post.Type));
+                    lastPostsListBox.Items.Add(string.Format("[{0}]", post.Type));
                 }
             }
 
@@ -226,15 +233,16 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
             }
         }
 
-          private void fetchFrienInfo(int i_RandomFriend)
+          private void fetchFriendInfo(int i_RandomFriend)
           {
                if (m_LoggedInUser != null)
                {
                     string birthDayUser = m_LoggedInUser.Friends[i_RandomFriend].Birthday;
                     string genderUser = m_LoggedInUser.Friends[i_RandomFriend].Gender.ToString();
                     string IDUser = m_LoggedInUser.Friends[i_RandomFriend].Id;
-                    friendsInfoTextBox.Text = string.Format("{0} BirthDay {1}\n{0} Gender: {2}\n{0} ID: {3}", m_LoggedInUser.Friends[i_RandomFriend].FirstName,
-                        birthDayUser, genderUser, IDUser);
+                    friendsInfoTextBox.Text = string.Format("{4}\n{0} Birthday: {1}\n{0} Gender: {2}\n{0} ID: {3}",
+                        m_LoggedInUser.Friends[i_RandomFriend].FirstName,
+                        birthDayUser, genderUser, IDUser, m_LoggedInUser.Friends[i_RandomFriend].Name);
                }             
           }
 
@@ -262,8 +270,9 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
                this.rememberMecheckBox.Checked = false;
                UserInfoTextBox.Clear();
                friendsInfoTextBox.Clear();
-               listBox1.Items.Clear();
+               lastPostsListBox.Items.Clear();
                pictureBoxRandomFriendProfilePic.Image = null;
+            welcomLabel.Text = "";
           }
 
           private void showInfoButton_Click(object sender, EventArgs e)
@@ -273,29 +282,76 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
                     string birthDayUser = m_LoggedInUser.Birthday;
                     string genderUser = m_LoggedInUser.Gender.ToString();
                     string IDUser = m_LoggedInUser.Id;
-                    User.eRelationshipStatus? relationshipStatusUser = m_LoggedInUser.RelationshipStatus;
-                    UserInfoTextBox.Text = string.Format("{0} BirthDay {1}\n{0} Gender: {2}\n{0} ID: {3}\n{0} Relationship: {4}", m_LoggedInUser.FirstName,
-                        birthDayUser, genderUser, IDUser, relationshipStatusUser);
+                    UserInfoTextBox.Text = string.Format("{0} BirthDay {1}\n{0} Gender: {2}\n{0} ID: {3}", m_LoggedInUser.FirstName,
+                        birthDayUser, genderUser, IDUser);
                }                 
           }
 
           private void pictureBoxRandomFriendProfilePic_Click(object sender, EventArgs e)
           {
-               Random randomPic = new Random();
-               int ran = randomPic.Next(0, m_LoggedInUser.Friends.Count);
-
-               if (m_LoggedInUser.Friends.Count > 0)
-               {
-                pictureBoxRandomFriendProfilePic.Image = m_LoggedInUser.Friends[ran].ImageNormal;
-                fetchFrienInfo(ran);
-               }
-               else
-               {
-                MessageBox.Show("No Friends to retrieve :(");
-               }
+            friendsInfoTextBox.Clear();
+            timer1.Enabled = false;
+            Random randomPic = new Random();
+            if (m_loginResult == null)
+            {
+                MessageBox.Show("Connect with your FACEBOOK user first!");
+            }
+            else
+            {
+                int ran = 0;
+                int intervalForTimer = 100;
+                timer1.Enabled = true;
+               // timer1.Interval = intervalForTimer;
+                if (m_LoggedInUser.Friends.Count > 0)
+                {
+                    timer2.Enabled = true;
+                    pictureBoxRandomFriendProfilePic.Enabled = false;
+                    // timer2.Start();
+                    timer1.Interval = 10;
+                    timer1.Start();
+                    timer2.Start();
+                 
+                }
+                else
+                {
+                    MessageBox.Show("No Friends to retrieve :(");
+                }
+            }
           }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Random randomPic = new Random();
+            int ran = 0;
+            ran = randomPic.Next(0, m_LoggedInUser.Friends.Count);
+            pictureBoxRandomFriendProfilePic.Image = m_friendImeges[ran];
+            if(timer1.Interval >= 500)
+            {
+                timer1.Stop();
+                timer2.Stop();
+                timer2.Enabled = false;
+                pictureBoxRandomFriendProfilePic.Enabled = true;
+                fetchFriendInfo(ran);
+            }
+        }
 
-          private void buttonCheckLeftFriends_Click(object sender, EventArgs e)
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            timer1.Interval += 100;
+            //if (timer1.Interval == 1000)
+            //{
+            //    timer2.Stop();
+            //}
+        }
+
+        private void saveFriendsProfilePics()
+        {
+            foreach (User friend in m_LoggedInUser.Friends)
+            {
+                m_friendImeges.Add(friend.ImageNormal);
+            }
+        }
+
+        private void buttonCheckLeftFriends_Click(object sender, EventArgs e)
           {
                if (m_LoggedInUser != null)
                {          
@@ -318,36 +374,9 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
                          MessageBox.Show("no one has left your friend list :)");
                     }                                       
                 }
-           }              
-     }
+           }
 
-          //private void button2_Click(object sender, EventArgs e)
-          //{
-          //    albumlistBox.Items.Clear();
-          //    albumlistBox.DisplayMember = "Name";
-          //    foreach (Album album in m_LoggedInUser.Albums)
-          //    {
-          //        albumlistBox.Items.Add(album);
-          //        //album.ReFetch(DynamicWrapper.eLoadOptions.Full);
-          //    }
+       
+    }
 
-          //    if (m_LoggedInUser.Albums.Count == 0)
-          //    {
-          //        MessageBox.Show("No Album to retrieve :(");
-          //    }
-          //}
-
-          //private void albumlistBox_SelectedIndexChanged(object sender, EventArgs e)
-          //{
-          //    int i = 0;
-          //    foreach(Album photo in m_LoggedInUser.Albums)
-          //    {
-
-          //        PictureBox pic = new PictureBox();
-          //        pic.Image = photo.Photos.ImageNormal;
-          //        pic.Location = new Point(1440 + i, 805);
-          //        pic.Size = new Size(100,100);
-          //        i += 110;
-          //    }
-          //}
 }

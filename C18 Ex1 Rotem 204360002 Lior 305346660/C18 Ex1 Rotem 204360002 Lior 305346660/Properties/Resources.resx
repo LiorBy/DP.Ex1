@@ -121,7 +121,19 @@
   <data name="Appsetting" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Appsetting.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1255</value>
   </data>
+  <data name="Cool-Blue-Backgrounds-4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cool-Blue-Backgrounds-4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="facebook_ads_infographic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\facebook-ads-infographic.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1504126420_conn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1504126420_conn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lior logout" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lior logout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="signs_click_here-512" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\signs_click_here-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

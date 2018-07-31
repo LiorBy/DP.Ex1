@@ -56,6 +56,7 @@
     <Compile Include="FormApp.Designer.cs">
       <DependentUpon>FormApp.cs</DependentUpon>
     </Compile>
+    <Compile Include="FriendsInfoFetcher.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormApp.resx">
@@ -87,6 +88,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\facebook-ads-infographic.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cool-Blue-Backgrounds-4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1504126420_conn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lior logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\signs_click_here-512.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

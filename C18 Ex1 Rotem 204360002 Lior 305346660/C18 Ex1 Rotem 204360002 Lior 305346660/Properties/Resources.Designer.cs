@@ -63,9 +63,9 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _888039_logo_512x512 {
+        internal static System.Drawing.Bitmap _1504126420_conn {
             get {
-                object obj = ResourceManager.GetObject("_888039_logo_512x512", resourceCulture);
+                object obj = ResourceManager.GetObject("1504126420_conn", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -82,9 +82,39 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Cool_Blue_Backgrounds_4 {
+            get {
+                object obj = ResourceManager.GetObject("Cool-Blue-Backgrounds-4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap facebook_ads_infographic {
             get {
                 object obj = ResourceManager.GetObject("facebook_ads_infographic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lior_logout {
+            get {
+                object obj = ResourceManager.GetObject("lior logout", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap signs_click_here_512 {
+            get {
+                object obj = ResourceManager.GetObject("signs_click_here-512", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
