@@ -10,7 +10,6 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
 {
     public sealed class Appsettings
     {
-
         private static readonly object sr_padlock = new object();
 
         private static Appsettings s_Appsettings = null;

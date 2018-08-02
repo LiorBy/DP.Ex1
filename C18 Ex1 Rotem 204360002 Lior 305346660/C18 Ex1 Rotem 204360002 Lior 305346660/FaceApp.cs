@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Runtime.InteropServices;
+using System.Web;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,19 +8,17 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using FacebookWrapper.ObjectModel;
-using FacebookWrapper;
-using System.Runtime.InteropServices;
-using System.Web;
-using Facebook;
 using System.Xml.Serialization;
 using System.IO;
+using Facebook;
+using FacebookWrapper.ObjectModel;
+using FacebookWrapper;
 
 namespace C18_Ex1_Rotem_204360002_Lior_305346660
 {
     public partial class FaceApp : Form
     {
-        private readonly Appsettings m_Appsettings;
+        private readonly Appsettings r_Appsettings;
         private List<string> m_FriendsFromFile;
         private User m_LoggedInUser;
         private LoginResult m_loginResult;
@@ -31,26 +31,26 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
             int w = Screen.PrimaryScreen.WorkingArea.Width;
             this.ClientSize = new Size(w, h);
             InitializeComponent();
-            m_Appsettings = Appsettings.LoadFromFile();
+            r_Appsettings = Appsettings.LoadFromFile();
             setFormSize();
         }
 
         private void setFormSize()
         {
-            this.rememberMecheckBox.Checked = m_Appsettings.RememberMe;
+            this.rememberMecheckBox.Checked = r_Appsettings.RememberMe;
             if (this.rememberMecheckBox.Checked)
             {
                 this.StartPosition = FormStartPosition.Manual;
-                this.Size = m_Appsettings.LastWindowSize;
-                this.Location = m_Appsettings.LastwindowLocation;
+                this.Size = r_Appsettings.LastWindowSize;
+                this.Location = r_Appsettings.LastwindowLocation;
             }
         }
 
         protected override void OnShown(EventArgs e)
         {
-            if (m_Appsettings.RememberMe && !string.IsNullOrEmpty(m_Appsettings.LastAccesToken))
+            if (r_Appsettings.RememberMe && !string.IsNullOrEmpty(r_Appsettings.LastAccesToken))
             {
-                m_loginResult = FacebookService.Connect(m_Appsettings.LastAccesToken);
+                m_loginResult = FacebookService.Connect(r_Appsettings.LastAccesToken);
                 m_LoggedInUser = m_loginResult.LoggedInUser;
                 fetchUserInfo();
                 m_welcomLabelMassage = string.Format("Welcome back\n{0}", m_LoggedInUser.Name);
@@ -67,6 +67,7 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
                 XmlSerializer serializer = new XmlSerializer(typeof(List<string>));
                 m_FriendsFromFile = serializer.Deserialize(stram) as List<string>;
             }
+
             saveFriendsProfilePics();
         }
 
@@ -93,25 +94,25 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            m_Appsettings.LastwindowLocation = this.Location;
-            m_Appsettings.LastWindowSize = this.Size;
-            m_Appsettings.RememberMe = this.rememberMecheckBox.Checked;
+            r_Appsettings.LastwindowLocation = this.Location;
+            r_Appsettings.LastWindowSize = this.Size;
+            r_Appsettings.RememberMe = this.rememberMecheckBox.Checked;
             if (this.rememberMecheckBox.Checked && m_LoggedInUser != null)
             {
-                m_Appsettings.LastAccesToken = m_loginResult.AccessToken;
+                r_Appsettings.LastAccesToken = m_loginResult.AccessToken;
             }
             else
             {
-                m_Appsettings.LastAccesToken = null;
+                r_Appsettings.LastAccesToken = null;
             }
 
-            m_Appsettings.SavetoFile();
+            r_Appsettings.SavetoFile();
         }
 
         private void loginAndInit()
         {
-
-            m_loginResult = FacebookService.Login("229517584351841", /// (desig patter's "Design Patterns Course App 2.4" app)
+            m_loginResult = FacebookService.Login(
+             "229517584351841",
              "public_profile",
              "user_birthday",
              "user_friends",
@@ -126,8 +127,7 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
              "read_page_mailboxes",
              "manage_pages",
              "publish_pages",
-             //---JUST FOR TESTING---//
-             "user_education_history",
+             "user_education_history", //---JUST FOR TESTING---//
              "user_actions.video",
              "user_actions.news",
              "user_actions.music",
@@ -141,14 +141,12 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
              "user_website",
              "user_work_history",
              "read_custom_friendlists",
-             "rsvp_event"
-             //------------------//
-             );
+             "rsvp_event");
+             
             if (!string.IsNullOrEmpty(m_loginResult.AccessToken))
             {
                 m_LoggedInUser = m_loginResult.LoggedInUser;
                 fetchUserInfo();
-
             }
             else
             {
@@ -161,9 +159,7 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
                     MessageBox.Show("User without permition... :-(\n Please Login again");
                     logout();
                 }
-
             }
-
         }
 
         private void fetchUserInfo()
@@ -238,9 +234,7 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
                 string birthDayUser = m_LoggedInUser.Friends[i_RandomFriend].Birthday;
                 string genderUser = m_LoggedInUser.Friends[i_RandomFriend].Gender.ToString();
                 string IDUser = m_LoggedInUser.Friends[i_RandomFriend].Id;
-                friendsInfoTextBox.Text = string.Format("{4}\n{0} Birthday: {1}\n{0} Gender: {2}\n{0} ID: {3}",
-                    m_LoggedInUser.Friends[i_RandomFriend].FirstName,
-                    birthDayUser, genderUser, IDUser, m_LoggedInUser.Friends[i_RandomFriend].Name);
+                friendsInfoTextBox.Text = string.Format("{4}\n{0} Birthday: {1}\n{0} Gender: {2}\n{0} ID: {3}",  m_LoggedInUser.Friends[i_RandomFriend].FirstName, birthDayUser, genderUser, IDUser, m_LoggedInUser.Friends[i_RandomFriend].Name);                                
             }
         }
 
@@ -275,7 +269,7 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
             friendsInfoTextBox.Clear();
             lastPostsListBox.Items.Clear();
             pictureBoxRandomFriendProfilePic.Image = null;
-            welcomLabel.Text = "";
+            welcomLabel.Text = string.Empty;
         }
 
         private void showInfoButton_Click(object sender, EventArgs e)
@@ -285,8 +279,7 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
                 string birthDayUser = m_LoggedInUser.Birthday;
                 string genderUser = m_LoggedInUser.Gender.ToString();
                 string IDUser = m_LoggedInUser.Id;
-                UserInfoTextBox.Text = string.Format("{0} BirthDay {1}\n{0} Gender: {2}\n{0} ID: {3}", m_LoggedInUser.FirstName,
-                    birthDayUser, genderUser, IDUser);
+                UserInfoTextBox.Text = string.Format("{0} BirthDay {1}\n{0} Gender: {2}\n{0} ID: {3}", m_LoggedInUser.FirstName, birthDayUser, genderUser, IDUser);                 
             }
         }
 
@@ -375,8 +368,5 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
                 }
             }
         }
-
-
     }
-
 }
