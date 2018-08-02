@@ -191,21 +191,21 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
             }
         }
 
-        private void fetchFriends()
-        {
-            lastPostsListBox.Items.Clear();
-            lastPostsListBox.DisplayMember = "Name";
-            foreach (User friend in m_LoggedInUser.Friends)
-            {
-                lastPostsListBox.Items.Add(friend);
-                friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
-            }
+        //private void fetchFriends()
+        //{
+        //    lastPostsListBox.Items.Clear();
+        //    lastPostsListBox.DisplayMember = "Name";
+        //    foreach (User friend in m_LoggedInUser.Friends)
+        //    {
+        //        lastPostsListBox.Items.Add(friend);
+        //        friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
+        //    }
 
-            if (m_LoggedInUser.Friends.Count == 0)
-            {
-                MessageBox.Show("No Friends to retrieve :(");
-            }
-        }
+        //    if (m_LoggedInUser.Friends.Count == 0)
+        //    {
+        //        MessageBox.Show("No Friends to retrieve :(");
+        //    }
+        //}
 
         private void fetchPosts()
         {
@@ -231,18 +231,7 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
             }
         }
 
-        private void fetchFriendInfo(int i_RandomFriend)
-        {
-            if (m_LoggedInUser != null)
-            {
-                string birthDayUser = m_LoggedInUser.Friends[i_RandomFriend].Birthday;
-                string genderUser = m_LoggedInUser.Friends[i_RandomFriend].Gender.ToString();
-                string IDUser = m_LoggedInUser.Friends[i_RandomFriend].Id;
-                friendsInfoTextBox.Text = string.Format("{4}\n{0} Birthday: {1}\n{0} Gender: {2}\n{0} ID: {3}",
-                    m_LoggedInUser.Friends[i_RandomFriend].FirstName,
-                    birthDayUser, genderUser, IDUser, m_LoggedInUser.Friends[i_RandomFriend].Name);
-            }
-        }
+        
 
         private void buttonSetStatus_Click(object sender, EventArgs e)
         {
@@ -290,6 +279,8 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
             }
         }
 
+        ///-------- Random lottery friend picture Fetcher-----///////
+        
         private void pictureBoxRandomFriendProfilePic_Click(object sender, EventArgs e)
         {
             pictureRandom();
@@ -342,6 +333,21 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
         {
             timerForLotteryFriends.Interval += 100;
         }
+
+        private void fetchFriendInfo(int i_RandomFriend)
+        {
+            if (m_LoggedInUser != null)
+            {
+                string birthDayUser = m_LoggedInUser.Friends[i_RandomFriend].Birthday;
+                string genderUser = m_LoggedInUser.Friends[i_RandomFriend].Gender.ToString();
+                string IDUser = m_LoggedInUser.Friends[i_RandomFriend].Id;
+                friendsInfoTextBox.Text = string.Format("{4}\n{0} Birthday: {1}\n{0} Gender: {2}\n{0} ID: {3}",
+                    m_LoggedInUser.Friends[i_RandomFriend].FirstName,
+                    birthDayUser, genderUser, IDUser, m_LoggedInUser.Friends[i_RandomFriend].Name);
+            }
+        }
+
+        ///------------------------------------------------------------------------------
 
         private void saveFriendsProfilePics()
         {
