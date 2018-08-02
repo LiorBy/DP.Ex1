@@ -45,8 +45,8 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
             this.profilePicture = new System.Windows.Forms.PictureBox();
             this.checkFriendsbutton = new System.Windows.Forms.Button();
             this.rememberMecheckBox = new System.Windows.Forms.CheckBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.timerForLotteryFriends = new System.Windows.Forms.Timer(this.components);
+            this.timerHelper = new System.Windows.Forms.Timer(this.components);
             this.ClickOnTheImageLabel = new System.Windows.Forms.Label();
             this.welcomLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -78,7 +78,7 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
             // 
             resources.ApplyResources(this.pictureBoxRandomFriendProfilePic, "pictureBoxRandomFriendProfilePic");
             this.pictureBoxRandomFriendProfilePic.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBoxRandomFriendProfilePic.BackgroundImage = global::C18_Ex1_Rotem_204360002_Lior_305346660.Properties.Resources.signs_click_here_512;
+            this.pictureBoxRandomFriendProfilePic.BackgroundImage = global::C18_Ex1_Rotem_204360002_Lior_305346660.Properties.Resources._636536002_170x170;
             this.pictureBoxRandomFriendProfilePic.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxRandomFriendProfilePic.Name = "pictureBoxRandomFriendProfilePic";
             this.pictureBoxRandomFriendProfilePic.TabStop = false;
@@ -108,14 +108,14 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
             resources.ApplyResources(this.LastPostsButtom, "LastPostsButtom");
             this.LastPostsButtom.Name = "LastPostsButtom";
             this.LastPostsButtom.UseVisualStyleBackColor = true;
-            this.LastPostsButtom.Click += new System.EventHandler(this.button1_Click);
+            this.LastPostsButtom.Click += new System.EventHandler(this.buttonFetchPosts_Click);
             // 
             // buttonSetStatus
             // 
             resources.ApplyResources(this.buttonSetStatus, "buttonSetStatus");
             this.buttonSetStatus.Name = "buttonSetStatus";
             this.buttonSetStatus.UseVisualStyleBackColor = true;
-            this.buttonSetStatus.Click += new System.EventHandler(this.buttonSetStatus_Click_1);
+            this.buttonSetStatus.Click += new System.EventHandler(this.buttonSetStatus_Click);
             // 
             // logOutButton
             // 
@@ -157,15 +157,15 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
             this.rememberMecheckBox.Name = "rememberMecheckBox";
             this.rememberMecheckBox.UseVisualStyleBackColor = true;
             // 
-            // timer1
+            // timerForLotteryFriends
             // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timerForLotteryFriends.Interval = 1000;
+            this.timerForLotteryFriends.Tick += new System.EventHandler(this.timerForLotteryFriends_Tick);
             // 
-            // timer2
+            // timerHelper
             // 
-            this.timer2.Interval = 1000;
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            this.timerHelper.Interval = 1000;
+            this.timerHelper.Tick += new System.EventHandler(this.timerHelper_Tick);
             // 
             // ClickOnTheImageLabel
             // 
@@ -237,8 +237,8 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
         private System.Windows.Forms.PictureBox profilePicture;
         private System.Windows.Forms.Button checkFriendsbutton;
         private System.Windows.Forms.CheckBox rememberMecheckBox;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Timer timerForLotteryFriends;
+        private System.Windows.Forms.Timer timerHelper;
         private System.Windows.Forms.Label ClickOnTheImageLabel;
         private System.Windows.Forms.Label welcomLabel;
         private System.Windows.Forms.Panel panel1;

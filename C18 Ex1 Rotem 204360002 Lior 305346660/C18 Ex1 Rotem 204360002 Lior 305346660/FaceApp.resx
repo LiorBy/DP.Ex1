@@ -154,16 +154,16 @@
     <value>Top, Right</value>
   </data>
   <data name="lastPostsListBox.ItemHeight" type="System.Int32, mscorlib">
-    <value>51</value>
+    <value>43</value>
   </data>
   <data name="lastPostsListBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>805, 80</value>
+    <value>846, 80</value>
   </data>
   <data name="lastPostsListBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
   <data name="lastPostsListBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>275, 157</value>
+    <value>275, 133</value>
   </data>
   <data name="lastPostsListBox.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -187,7 +187,7 @@
     <value>Stretch</value>
   </data>
   <data name="pictureBoxRandomFriendProfilePic.Location" type="System.Drawing.Point, System.Drawing">
-    <value>296, 382</value>
+    <value>296, 388</value>
   </data>
   <data name="pictureBoxRandomFriendProfilePic.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -220,7 +220,7 @@
     <value>True</value>
   </data>
   <data name="showInfoButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>573, 6</value>
+    <value>614, 6</value>
   </data>
   <data name="showInfoButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -253,7 +253,7 @@
     <value>Century Gothic, 20pt</value>
   </data>
   <data name="friendsInfoTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>296, 581</value>
+    <value>296, 587</value>
   </data>
   <data name="friendsInfoTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -283,13 +283,13 @@
     <value>Top, Right</value>
   </data>
   <data name="UserInfoTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>573, 80</value>
+    <value>614, 80</value>
   </data>
   <data name="UserInfoTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
   <data name="UserInfoTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 137</value>
+    <value>228, 133</value>
   </data>
   <data name="UserInfoTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -313,7 +313,7 @@
     <value>Top, Right</value>
   </data>
   <data name="LastPostsButtom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>804, 6</value>
+    <value>845, 6</value>
   </data>
   <data name="LastPostsButtom.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -343,7 +343,7 @@
     <value>Bottom, Left</value>
   </data>
   <data name="buttonSetStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 569</value>
+    <value>3, 575</value>
   </data>
   <data name="buttonSetStatus.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -403,7 +403,7 @@
     <value>Bottom, Left</value>
   </data>
   <data name="textBoxStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 645</value>
+    <value>3, 651</value>
   </data>
   <data name="textBoxStatus.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -436,7 +436,7 @@
     <value>Bottom, Left</value>
   </data>
   <data name="profilePicture.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 196</value>
+    <value>11, 202</value>
   </data>
   <data name="profilePicture.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -472,7 +472,7 @@
     <value>Century Gothic, 12pt, style=Bold</value>
   </data>
   <data name="checkFriendsbutton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 448</value>
+    <value>3, 454</value>
   </data>
   <data name="checkFriendsbutton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>7, 7, 7, 7</value>
@@ -508,7 +508,7 @@
     <value>Century Gothic, 20pt, style=Bold</value>
   </data>
   <data name="rememberMecheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 360</value>
+    <value>11, 366</value>
   </data>
   <data name="rememberMecheckBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>7, 7, 7, 7</value>
@@ -534,11 +534,11 @@
   <data name="&gt;&gt;rememberMecheckBox.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+  <metadata name="timerForLotteryFriends.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>239, 17</value>
   </metadata>
-  <metadata name="timer2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>173, 17</value>
+  <metadata name="timerHelper.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
   <data name="ClickOnTheImageLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -547,13 +547,13 @@
     <value>True</value>
   </data>
   <data name="ClickOnTheImageLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Eras Demi ITC, 20pt, style=Bold</value>
+    <value>Century Gothic, 12pt, style=Bold</value>
   </data>
   <data name="ClickOnTheImageLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>236, 311</value>
+    <value>298, 341</value>
   </data>
   <data name="ClickOnTheImageLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>855, 138</value>
+    <value>516, 86</value>
   </data>
   <data name="ClickOnTheImageLabel.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -608,7 +608,7 @@
     <value>0, 0</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1091, 302</value>
+    <value>1132, 302</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -635,10 +635,10 @@
     <value>None</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1091, 730</value>
+    <value>1132, 736</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 14pt</value>
+    <value>Century Gothic, 12pt</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -649,16 +649,16 @@
   <data name="$this.Text" xml:space="preserve">
     <value>FaceApp</value>
   </data>
-  <data name="&gt;&gt;timer1.Name" xml:space="preserve">
-    <value>timer1</value>
+  <data name="&gt;&gt;timerForLotteryFriends.Name" xml:space="preserve">
+    <value>timerForLotteryFriends</value>
   </data>
-  <data name="&gt;&gt;timer1.Type" xml:space="preserve">
+  <data name="&gt;&gt;timerForLotteryFriends.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;timer2.Name" xml:space="preserve">
-    <value>timer2</value>
+  <data name="&gt;&gt;timerHelper.Name" xml:space="preserve">
+    <value>timerHelper</value>
   </data>
-  <data name="&gt;&gt;timer2.Type" xml:space="preserve">
+  <data name="&gt;&gt;timerHelper.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

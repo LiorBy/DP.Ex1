@@ -50,17 +50,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Appsetting.cs" />
-    <Compile Include="FormApp.cs">
+    <Compile Include="FaceApp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormApp.Designer.cs">
-      <DependentUpon>FormApp.cs</DependentUpon>
+    <Compile Include="FaceApp.Designer.cs">
+      <DependentUpon>FaceApp.cs</DependentUpon>
     </Compile>
-    <Compile Include="FriendsInfoFetcher.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormApp.resx">
-      <DependentUpon>FormApp.cs</DependentUpon>
+    <EmbeddedResource Include="FaceApp.resx">
+      <DependentUpon>FaceApp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -100,6 +99,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\signs_click_here-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\golden-slot-machine-wins-jackpot-vector-illustration-isolated-transparent-background-golden-slot-machine-wins-jackpot-99912065.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\85477500-golden-slot-machine-isolated-on-a-transparent-background-combination-on-a-drum-of-two-sevens-and-che.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\636536002-170x170.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

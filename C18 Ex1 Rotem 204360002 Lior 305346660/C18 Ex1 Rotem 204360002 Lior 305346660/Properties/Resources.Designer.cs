@@ -71,6 +71,27 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _636536002_170x170 {
+            get {
+                object obj = ResourceManager.GetObject("636536002-170x170", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _85477500_golden_slot_machine_isolated_on_a_transparent_background_combination_on_a_drum_of_two_sevens_and_che {
+            get {
+                object obj = ResourceManager.GetObject("85477500-golden-slot-machine-isolated-on-a-transparent-background-combination-on-" +
+                        "a-drum-of-two-sevens-and-che", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
         internal static string Appsetting {
@@ -95,6 +116,17 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660.Properties {
         internal static System.Drawing.Bitmap facebook_ads_infographic {
             get {
                 object obj = ResourceManager.GetObject("facebook_ads_infographic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap golden_slot_machine_wins_jackpot_vector_illustration_isolated_transparent_background_golden_slot_machine_wins_jackpot_99912065 {
+            get {
+                object obj = ResourceManager.GetObject("golden-slot-machine-wins-jackpot-vector-illustration-isolated-transparent-backgro" +
+                        "und-golden-slot-machine-wins-jackpot-99912065", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
