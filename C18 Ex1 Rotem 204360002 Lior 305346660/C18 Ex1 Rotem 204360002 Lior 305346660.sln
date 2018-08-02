@@ -5,12 +5,6 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C18 Ex1 Rotem 204360002 Lior 305346660", "C18 Ex1 Rotem 204360002 Lior 305346660\C18 Ex1 Rotem 204360002 Lior 305346660.csproj", "{F87DEEA4-C387-48D7-8EAC-06A404F29662}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F6CDB3A5-AE92-4BBB-B40D-9DAE337F5A10}"
-	ProjectSection(SolutionItems) = preProject
-		C18 Ex1 Rotem 204360002 Lior 305346660\C18 Ex1 Exercise Checking Report.txt = C18 Ex1 Rotem 204360002 Lior 305346660\C18 Ex1 Exercise Checking Report.txt
-		C18 Ex1 Rotem 204360002 Lior 305346660\C18 Ex1 Rotem 204360002 Lior 305346660.docx = C18 Ex1 Rotem 204360002 Lior 305346660\C18 Ex1 Rotem 204360002 Lior 305346660.docx
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

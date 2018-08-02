@@ -83,10 +83,28 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Appsetting.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\facebook-ads-infographic.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cool-Blue-Backgrounds-4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\1504126420_conn.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\lior logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\signs_click_here-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\golden-slot-machine-wins-jackpot-vector-illustration-isolated-transparent-background-golden-slot-machine-wins-jackpot-99912065.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\85477500-golden-slot-machine-isolated-on-a-transparent-background-combination-on-a-drum-of-two-sevens-and-che.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\636536002-170x170.jpg" />
