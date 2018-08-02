@@ -79,8 +79,8 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
             // 
             resources.ApplyResources(this.pictureBoxRandomFriendProfilePic, "pictureBoxRandomFriendProfilePic");
             this.pictureBoxRandomFriendProfilePic.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBoxRandomFriendProfilePic.BackgroundImage = global::C18_Ex1_Rotem_204360002_Lior_305346660.Properties.Resources._636536002_170x170;
-            this.pictureBoxRandomFriendProfilePic.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxRandomFriendProfilePic.BackgroundImage = Properties.Resources._636536002_170x170;
+            pictureBoxRandomFriendProfilePic.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxRandomFriendProfilePic.Name = "pictureBoxRandomFriendProfilePic";
             this.pictureBoxRandomFriendProfilePic.TabStop = false;
             this.pictureBoxRandomFriendProfilePic.Click += new System.EventHandler(this.pictureBoxRandomFriendProfilePic_Click);
