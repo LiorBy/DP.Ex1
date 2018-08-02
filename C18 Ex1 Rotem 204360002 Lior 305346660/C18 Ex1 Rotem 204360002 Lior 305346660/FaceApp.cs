@@ -191,23 +191,7 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
             }
         }
 
-        //private void fetchFriends()
-        //{
-        //    lastPostsListBox.Items.Clear();
-        //    lastPostsListBox.DisplayMember = "Name";
-        //    foreach (User friend in m_LoggedInUser.Friends)
-        //    {
-        //        lastPostsListBox.Items.Add(friend);
-        //        friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
-        //    }
-
-        //    if (m_LoggedInUser.Friends.Count == 0)
-        //    {
-        //        MessageBox.Show("No Friends to retrieve :(");
-        //    }
-        //}
-
-        private void fetchPosts()
+         private void fetchPosts()
         {
             foreach (Post post in m_LoggedInUser.Posts)
             {
@@ -230,9 +214,7 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
                 MessageBox.Show("No Posts to retrieve :(");
             }
         }
-
-        
-
+   
         private void buttonSetStatus_Click(object sender, EventArgs e)
         {
             if (m_LoggedInUser != null)
