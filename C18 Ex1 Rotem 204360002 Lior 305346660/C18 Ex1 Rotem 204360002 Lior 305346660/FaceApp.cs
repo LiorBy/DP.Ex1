@@ -221,7 +221,7 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
             }
         }
 
-        // --- Lottery friens fetcher
+        //// --- Lottery friens fetcher
         private void pictureBoxRandomFriendProfilePic_Click(object sender, EventArgs e)
         {
             pictureRandom();
@@ -285,9 +285,9 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
                 friendsInfoTextBox.Text = string.Format("{4}\n{0} Birthday: {1}\n{0} Gender: {2}\n{0} ID: {3}", m_LoggedInUser.Friends[i_RandomFriend].FirstName, birthDayUser, genderUser, IDUser, m_LoggedInUser.Friends[i_RandomFriend].Name);
             }
         }
-        // -------------------------------------//
+        //// -------------------------------------//
 
-        // --Unfiend fetcher
+        //// --Unfiend fetcher
         private void saveFriendsProfilePics()
         {
             foreach (User friend in m_LoggedInUser.Friends)
@@ -338,7 +338,7 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
         {
             string path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
 
-            if (!File.Exists(string.Format(path + string.Format(@"Friends of {0}.xml", m_LoggedInUser.Name))))
+            if (!File.Exists(string.Format(path + string.Format(@"\Friends of {0}.xml", m_LoggedInUser.Name))))
             {
                 using (Stream stram = new FileStream(path + string.Format(@"\Friends of {0}.xml", m_LoggedInUser.Name), FileMode.Create))
                 {
@@ -355,6 +355,6 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
             }
         }
 
-        //---------------------------------//
+        ////---------------------------------//
     }
 }

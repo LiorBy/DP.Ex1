@@ -2,7 +2,7 @@
 
 namespace C18_Ex1_Rotem_204360002_Lior_305346660
 {
-    partial class FaceApp
+    public partial class FaceApp
     {
         /// <summary>
         /// Required designer variable.
@@ -19,6 +19,7 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
             {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
@@ -220,10 +221,7 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
 
         }
 
-       
         #endregion
-
-
         private System.Windows.Forms.Button connectButton;
         private System.Windows.Forms.ListBox lastPostsListBox;
         private System.Windows.Forms.PictureBox pictureBoxRandomFriendProfilePic;
@@ -244,4 +242,3 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
         private System.Windows.Forms.Panel panel1;
     }
 }
-
