@@ -12,6 +12,7 @@ using System.IO;
 using Facebook;
 using FacebookWrapper.ObjectModel;
 using FacebookWrapper;
+using System.Threading;
 
 namespace C18_Ex1_Rotem_204360002_Lior_305346660
 {
@@ -48,16 +49,27 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
 
         protected override void OnShown(EventArgs e)
         {
+            new Thread(autoLogIn).Start();
+            //autoLogIn();
+        }
+      
+        private void autoLogIn()
+        {
             if (r_Appsettings.RememberMe && !string.IsNullOrEmpty(r_Appsettings.LastAccesToken))
             {
                 m_loginResult = FacebookService.Connect(r_Appsettings.LastAccesToken);
                 m_LoggedInUser = m_loginResult.LoggedInUser;
-                fetchUserInfo();
+                new Thread(fetchUserInfo).Start();
+                new Thread(fetchPosts).Start();
+                new Thread(fetchUserPersonalInfo).Start();
+                
+                //fetchPosts();
+                //fetchUserPersonalInfo();
                 m_welcomLabelMassage = string.Format("Welcome back\n{0}", m_LoggedInUser.Name);
-                welcomLabel.Text = m_welcomLabelMassage;
+                welcomLabel.Invoke(new Action(() => welcomLabel.Text = m_welcomLabelMassage));
             }
         }
-      
+
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             r_Appsettings.LastwindowLocation = this.Location;
@@ -112,7 +124,7 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
             if (!string.IsNullOrEmpty(m_loginResult.AccessToken))
             {
                 m_LoggedInUser = m_loginResult.LoggedInUser;
-                fetchUserInfo();
+                 new Thread(fetchUserInfo).Start();
             }
             else
             {
@@ -137,6 +149,7 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
         private void connectButton_Click(object sender, EventArgs e)
         {
             loginAndInit();
+
             if (m_LoggedInUser != null)
             {
                 saveFriendsToFile();
@@ -149,7 +162,7 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
         {
             if (m_LoggedInUser != null)
             {
-                fetchPosts();
+                new Thread(fetchPosts).Start();
             }
         }
   
@@ -159,15 +172,16 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
             {
                 if (post.Message != null)
                 {
-                    lastPostsListBox.Items.Add(post.Message);
+                    lastPostsListBox.Invoke(new Action(() => lastPostsListBox.Items.Add(post.Message)));
                 }
                 else if (post.Caption != null)
                 {
-                    lastPostsListBox.Items.Add(post.Caption);
+                    lastPostsListBox.Invoke(new Action(() => lastPostsListBox.Items.Add(post.Caption)));
                 }
                 else
                 {
-                    lastPostsListBox.Items.Add(string.Format("[{0}]", post.Type));
+                    lastPostsListBox.Invoke(new Action(() =>
+                    lastPostsListBox.Items.Add(string.Format("[{0}]", post.Type))));
                 }
             }
 
@@ -195,11 +209,11 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
         {
             if (m_LoggedInUser != null || m_loginResult != null)
             {
-                FacebookService.Logout(cleanProfilePic);
+                FacebookService.Logout(cleanProfile);
             }
         }
 
-        private void cleanProfilePic()
+        private void cleanProfile()
         {
             profilePicture.Image = null;
             m_LoggedInUser = null;
@@ -213,15 +227,21 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
 
         private void showInfoButton_Click(object sender, EventArgs e)
         {
+            fetchUserPersonalInfo();
+        }
+
+        private void fetchUserPersonalInfo()
+        {
             if (m_LoggedInUser != null)
             {
                 string birthDayUser = m_LoggedInUser.Birthday;
                 string genderUser = m_LoggedInUser.Gender.ToString();
                 string IDUser = m_LoggedInUser.Id;
-                UserInfoTextBox.Text = string.Format("{0} BirthDay {1}\n{0} Gender: {2}\n{0} ID: {3}", m_LoggedInUser.FirstName, birthDayUser, genderUser, IDUser);                 
+                UserInfoTextBox.Invoke(new Action(() => 
+                UserInfoTextBox.Text = string.Format("{0} BirthDay {1}\n{0} Gender: {2}\n{0} ID: {3}",
+                m_LoggedInUser.FirstName, birthDayUser, genderUser, IDUser)));
             }
         }
-
         //// --- Lottery friens feature
         private void pictureBoxRandomFriendProfilePic_Click(object sender, EventArgs e)
         {

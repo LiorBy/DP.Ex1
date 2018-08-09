@@ -51,9 +51,11 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
             this.ClickOnTheImageLabel = new System.Windows.Forms.Label();
             this.welcomLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRandomFriendProfilePic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // connectButton
@@ -189,6 +191,10 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // FaceApp
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -216,6 +222,7 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,5 +247,6 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
         private System.Windows.Forms.Label ClickOnTheImageLabel;
         private System.Windows.Forms.Label welcomLabel;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
