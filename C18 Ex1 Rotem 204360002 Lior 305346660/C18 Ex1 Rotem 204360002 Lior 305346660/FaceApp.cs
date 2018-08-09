@@ -18,6 +18,7 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
     public partial class FaceApp : Form
     {
         private readonly Appsettings r_Appsettings;
+        private readonly string r_Path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
         private List<string> m_FriendsFromFile;
         private User m_LoggedInUser;
         private LoginResult m_loginResult;
@@ -221,7 +222,7 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
             }
         }
 
-        //// --- Lottery friens fetcher
+        //// --- Lottery friens feature
         private void pictureBoxRandomFriendProfilePic_Click(object sender, EventArgs e)
         {
             pictureRandom();
@@ -287,7 +288,7 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
         }
         //// -------------------------------------//
 
-        //// --Unfiend fetcher
+        //// --Unfiend feature
         private void saveFriendsProfilePics()
         {
             foreach (User friend in m_LoggedInUser.Friends)
@@ -313,6 +314,7 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
                 {
                     //////////someone in the friendlist had left
                     MessageBox.Show("someone in the friend list had left :(");
+                    updateFriendsToFile();
                 }
                 else
                 {
@@ -322,10 +324,8 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
         }
 
         private void loadfriendfromfile()
-        {
-            string path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-
-            using (Stream stram = new FileStream(path + string.Format(@"\Friends of {0}.xml", m_LoggedInUser.Name), FileMode.Open))
+        {          
+            using (Stream stram = new FileStream(r_Path + string.Format(@"\Friends of {0}.xml", m_LoggedInUser.Name), FileMode.Open))
             {
                 XmlSerializer serializer = new XmlSerializer(typeof(List<string>));
                 m_FriendsFromFile = serializer.Deserialize(stram) as List<string>;
@@ -335,26 +335,28 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
         }
 
         private void saveFriendsToFile()
-        {
-            string path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-
-            if (!File.Exists(string.Format(path + string.Format(@"\Friends of {0}.xml", m_LoggedInUser.Name))))
+        {         
+            if (!File.Exists(string.Format(r_Path + string.Format(@"\Friends of {0}.xml", m_LoggedInUser.Name))))
             {
-                using (Stream stram = new FileStream(path + string.Format(@"\Friends of {0}.xml", m_LoggedInUser.Name), FileMode.Create))
-                {
-                    XmlSerializer serializer = new XmlSerializer(typeof(List<string>));
-                    List<string> friends = new List<string>();
-
-                    foreach (User friend in m_LoggedInUser.Friends)
-                    {
-                        friends.Add(friend.Name);
-                    }
-
-                    serializer.Serialize(stram, friends);
-                }
+                updateFriendsToFile();
             }
         }
 
+        private void updateFriendsToFile()
+        {         
+            using (Stream stram = new FileStream(r_Path + string.Format(@"\Friends of {0}.xml", m_LoggedInUser.Name), FileMode.Create))
+            {
+                XmlSerializer serializer = new XmlSerializer(typeof(List<string>));
+                List<string> friends = new List<string>();
+
+                foreach (User friend in m_LoggedInUser.Friends)
+                {
+                    friends.Add(friend.Name);
+                }
+
+                serializer.Serialize(stram, friends);
+            }
+        }
         ////---------------------------------//
     }
 }
