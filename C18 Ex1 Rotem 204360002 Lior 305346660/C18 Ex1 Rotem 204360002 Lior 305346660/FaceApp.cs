@@ -13,18 +13,21 @@ using Facebook;
 using FacebookWrapper.ObjectModel;
 using FacebookWrapper;
 using System.Threading;
+using C18.Ex1.Logic;
+
+
 
 namespace C18_Ex1_Rotem_204360002_Lior_305346660
 {
     public partial class FaceApp : Form
     {
         private readonly Appsettings r_Appsettings;
-        private readonly string r_Path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-        private List<string> m_FriendsFromFile;
         private User m_LoggedInUser;
         private LoginResult m_loginResult;
         private List<Image> m_friendImeges = new List<Image>();
         private string m_welcomLabelMassage;
+        private readonly FaceAppLogic faceAppLogic = new FaceAppLogic();
+        private Facade faceAppFacade = new Facade();
 
         public FaceApp()
         {
@@ -56,9 +59,10 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
         private void autoLogIn()
         {
             if (r_Appsettings.RememberMe && !string.IsNullOrEmpty(r_Appsettings.LastAccesToken))
-            {
+            {              
                 m_loginResult = FacebookService.Connect(r_Appsettings.LastAccesToken);
                 m_LoggedInUser = m_loginResult.LoggedInUser;
+                faceAppLogic.loggedInUser = m_LoggedInUser;
                 new Thread(fetchUserInfo).Start();
                 new Thread(fetchPosts).Start();
                 new Thread(fetchUserPersonalInfo).Start();
@@ -124,7 +128,8 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
             if (!string.IsNullOrEmpty(m_loginResult.AccessToken))
             {
                 m_LoggedInUser = m_loginResult.LoggedInUser;
-                 new Thread(fetchUserInfo).Start();
+                faceAppLogic.loggedInUser = m_LoggedInUser;
+                new Thread(fetchUserInfo).Start();
             }
             else
             {
@@ -146,13 +151,21 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
             saveFriendsProfilePics();
         }
 
+        private void saveFriendsProfilePics()
+          {
+               foreach (User friend in m_LoggedInUser.Friends)
+               {
+                    m_friendImeges.Add(friend.ImageNormal);
+               }
+          }
+
         private void connectButton_Click(object sender, EventArgs e)
         {
             loginAndInit();
 
             if (m_LoggedInUser != null)
             {
-                saveFriendsToFile();
+                faceAppLogic.SaveFriendsToFile();
                 m_welcomLabelMassage = string.Format("Welcome\n{0}", m_LoggedInUser.Name);
                 welcomLabel.Text = m_welcomLabelMassage;
             }
@@ -195,8 +208,11 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
         {
             if (m_LoggedInUser != null)
             {
-                Status postedStatus = m_LoggedInUser.PostStatus(textBoxStatus.Text);
-                MessageBox.Show("Status Posted! ID: " + postedStatus.Id);
+                StatusAdapter adapter = new StatusAdapter { user = m_LoggedInUser };
+                List<string> statuses = new List<string>();
+                statuses.Add(textBoxStatus.Text);
+                List<Status> postedStatuses = adapter.PostStatuses(statuses);
+                MessageBox.Show("Status Posted! ID: " + postedStatuses.First().Id);
             }
         }
 
@@ -248,54 +264,6 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
             pictureRandom();
         }
 
-        private void pictureRandom()
-        {
-            friendsInfoTextBox.Clear();
-            timerForLotteryFriends.Enabled = false;
-            Random randomPic = new Random();
-            if (m_LoggedInUser == null)
-            {
-                MessageBox.Show("Connect with your FACEBOOK user first!");
-            }
-            else
-            {
-                timerForLotteryFriends.Enabled = true;
-                if (m_LoggedInUser.Friends.Count > 0)
-                {
-                    timerHelper.Enabled = true;
-                    pictureBoxRandomFriendProfilePic.Enabled = false;
-                    timerForLotteryFriends.Interval = 10;
-                    timerForLotteryFriends.Start();
-                    timerHelper.Start();
-                }
-                else
-                {
-                    MessageBox.Show("No Friends to retrieve :(");
-                }
-            }
-        }
-
-        private void timerForLotteryFriends_Tick(object sender, EventArgs e)
-        {
-            Random randomPic = new Random();
-            int ran = 0;
-            ran = randomPic.Next(0, m_LoggedInUser.Friends.Count);
-            pictureBoxRandomFriendProfilePic.Image = m_friendImeges[ran];
-            if (timerForLotteryFriends.Interval >= 500)
-            {
-                timerForLotteryFriends.Stop();
-                timerHelper.Stop();
-                timerHelper.Enabled = false;
-                pictureBoxRandomFriendProfilePic.Enabled = true;
-                fetchFriendInfo(ran);
-            }
-        }
-
-        private void timerHelper_Tick(object sender, EventArgs e)
-        {
-            timerForLotteryFriends.Interval += 100;
-        }
-
         private void fetchFriendInfo(int i_RandomFriend)
         {
             if (m_LoggedInUser != null)
@@ -309,74 +277,69 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
         //// -------------------------------------//
 
         //// --Unfiend feature
-        private void saveFriendsProfilePics()
-        {
-            foreach (User friend in m_LoggedInUser.Friends)
-            {
-                m_friendImeges.Add(friend.ImageNormal);
-            }
-        }
-
         private void buttonCheckLeftFriends_Click(object sender, EventArgs e)
         {
-            if (m_LoggedInUser != null)
-            {
-                loadfriendfromfile();
-                List<string> AllfriendsNames = new List<string>();
 
-                foreach (User friend in m_LoggedInUser.Friends)
-                {
-                    AllfriendsNames.Add(friend.Name);
-                }
+             bool isfriendLeft = faceAppFacade.CheckLeftFriends();
 
-                var missingFriends = m_FriendsFromFile.Except(AllfriendsNames);
-                if (missingFriends.Count<string>() > 0)
-                {
-                    //////////someone in the friendlist had left
+               if (isfriendLeft)
+               {
                     MessageBox.Show("someone in the friend list had left :(");
-                    updateFriendsToFile();
-                }
-                else
-                {
+               }
+               else
+               {
                     MessageBox.Show("no one has left your friend list :)");
-                }
-            }
-        }
+               }         
+         }
 
-        private void loadfriendfromfile()
-        {          
-            using (Stream stram = new FileStream(r_Path + string.Format(@"\Friends of {0}.xml", m_LoggedInUser.Name), FileMode.Open))
-            {
-                XmlSerializer serializer = new XmlSerializer(typeof(List<string>));
-                m_FriendsFromFile = serializer.Deserialize(stram) as List<string>;
-            }
+        private void pictureRandom()
+          {
+               friendsInfoTextBox.Clear();
+               timerForLotteryFriends.Enabled = false;
+               Random randomPic = new Random();
+               if (m_LoggedInUser == null)
+               {
+                    MessageBox.Show("Connect with your FACEBOOK user first!");
+               }
+               else
+               {
+                    timerForLotteryFriends.Enabled = true;
+                    if (m_LoggedInUser.Friends.Count > 0)
+                    {
+                         timerHelper.Enabled = true;
+                         pictureBoxRandomFriendProfilePic.Enabled = false;
+                         timerForLotteryFriends.Interval = 10;
+                         timerForLotteryFriends.Start();
+                         timerHelper.Start();
+                    }
+                    else
+                    {
+                         MessageBox.Show("No Friends to retrieve :(");
+                    }
+               }
+          }
 
-            saveFriendsProfilePics();
-        }
+        private void timerForLotteryFriends_Tick(object sender, EventArgs e)
+          {
+               Random randomPic = new Random();
+               int ran = 0;
+               ran = randomPic.Next(0, m_LoggedInUser.Friends.Count);
+               pictureBoxRandomFriendProfilePic.Image = m_friendImeges[ran];
+               if (timerForLotteryFriends.Interval >= 500)
+               {
+                    timerForLotteryFriends.Stop();
+                    timerHelper.Stop();
+                    timerHelper.Enabled = false;
+                    pictureBoxRandomFriendProfilePic.Enabled = true;
+                    fetchFriendInfo(ran);
+               }
+          }
 
-        private void saveFriendsToFile()
-        {         
-            if (!File.Exists(string.Format(r_Path + string.Format(@"\Friends of {0}.xml", m_LoggedInUser.Name))))
-            {
-                updateFriendsToFile();
-            }
-        }
+        private void timerHelper_Tick(object sender, EventArgs e)
+          {
+               timerForLotteryFriends.Interval += 100;
+          }
 
-        private void updateFriendsToFile()
-        {         
-            using (Stream stram = new FileStream(r_Path + string.Format(@"\Friends of {0}.xml", m_LoggedInUser.Name), FileMode.Create))
-            {
-                XmlSerializer serializer = new XmlSerializer(typeof(List<string>));
-                List<string> friends = new List<string>();
-
-                foreach (User friend in m_LoggedInUser.Friends)
-                {
-                    friends.Add(friend.Name);
-                }
-
-                serializer.Serialize(stram, friends);
-            }
-        }
-        ////---------------------------------//
-    }
+          ////---------------------------------//
+     }
 }
