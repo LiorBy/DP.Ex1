@@ -50,6 +50,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Appsetting.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="StatusAdapter.cs" />
     <Compile Include="FaceApp.cs">
       <SubType>Form</SubType>
@@ -65,14 +70,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -88,9 +88,6 @@
     <None Include="Resources\Appsetting.xml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\facebook-ads-infographic.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Cool-Blue-Backgrounds-4.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -103,19 +100,15 @@
     <None Include="Resources\signs_click_here-512.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\golden-slot-machine-wins-jackpot-vector-illustration-isolated-transparent-background-golden-slot-machine-wins-jackpot-99912065.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\85477500-golden-slot-machine-isolated-on-a-transparent-background-combination-on-a-drum-of-two-sevens-and-che.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\636536002-170x170.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\C18.Ex1.Logic\C18.Ex1.Logic.csproj">
       <Project>{9d2cea78-5726-4488-b92e-13edb27cb99d}</Project>
       <Name>C18.Ex1.Logic</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\red slot.jpg" />
+    <Content Include="Resources\small slot.jpg" />
+    <Content Include="Resources\three slot.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

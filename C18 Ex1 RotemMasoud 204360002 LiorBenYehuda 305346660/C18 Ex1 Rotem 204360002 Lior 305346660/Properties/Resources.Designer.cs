@@ -113,16 +113,6 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap facebook_ads_infographic {
-            get {
-                object obj = ResourceManager.GetObject("facebook_ads_infographic", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap golden_slot_machine_wins_jackpot_vector_illustration_isolated_transparent_background_golden_slot_machine_wins_jackpot_99912065 {
             get {
                 object obj = ResourceManager.GetObject("golden-slot-machine-wins-jackpot-vector-illustration-isolated-transparent-backgro" +
