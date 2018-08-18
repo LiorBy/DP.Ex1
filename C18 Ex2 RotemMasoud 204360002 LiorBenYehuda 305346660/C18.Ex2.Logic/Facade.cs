@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace C18.Ex1.Logic
+namespace C18.Ex2.Logic
 {
      public class Facade
      {

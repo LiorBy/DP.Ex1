@@ -100,9 +100,9 @@
     <None Include="Resources\signs_click_here-512.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\C18.Ex1.Logic\C18.Ex1.Logic.csproj">
-      <Project>{9d2cea78-5726-4488-b92e-13edb27cb99d}</Project>
-      <Name>C18.Ex1.Logic</Name>
+    <ProjectReference Include="..\C18.Ex2.Logic\C18.Ex2.Logic.csproj">
+      <Project>{fe54a775-41c7-4eff-a8fd-1b7aeb8aef34}</Project>
+      <Name>C18.Ex2.Logic</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

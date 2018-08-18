@@ -13,8 +13,7 @@ using Facebook;
 using FacebookWrapper.ObjectModel;
 using FacebookWrapper;
 using System.Threading;
-using C18.Ex1.Logic;
-
+using C18.Ex2.Logic;
 
 
 namespace C18_Ex1_Rotem_204360002_Lior_305346660

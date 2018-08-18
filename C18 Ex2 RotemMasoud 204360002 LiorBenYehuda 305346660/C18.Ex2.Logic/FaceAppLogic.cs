@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace C18.Ex1.Logic
+namespace C18.Ex2.Logic
 {
      public class FaceAppLogic
      {
