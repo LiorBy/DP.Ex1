@@ -154,16 +154,16 @@
     <value>Top, Right</value>
   </data>
   <data name="lastPostsListBox.ItemHeight" type="System.Int32, mscorlib">
-    <value>43</value>
+    <value>21</value>
   </data>
   <data name="lastPostsListBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>846, 80</value>
+    <value>873, 80</value>
   </data>
   <data name="lastPostsListBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
   <data name="lastPostsListBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>275, 133</value>
+    <value>275, 130</value>
   </data>
   <data name="lastPostsListBox.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -178,7 +178,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lastPostsListBox.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>10</value>
   </data>
   <data name="pictureBoxRandomFriendProfilePic.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -187,7 +187,7 @@
     <value>Stretch</value>
   </data>
   <data name="pictureBoxRandomFriendProfilePic.Location" type="System.Drawing.Point, System.Drawing">
-    <value>296, 388</value>
+    <value>296, 415</value>
   </data>
   <data name="pictureBoxRandomFriendProfilePic.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -211,7 +211,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pictureBoxRandomFriendProfilePic.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>16</value>
   </data>
   <data name="showInfoButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -220,7 +220,7 @@
     <value>True</value>
   </data>
   <data name="showInfoButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>614, 6</value>
+    <value>641, 6</value>
   </data>
   <data name="showInfoButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -244,46 +244,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;showInfoButton.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="friendsInfoTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="friendsInfoTextBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 20pt</value>
-  </data>
-  <data name="friendsInfoTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>296, 587</value>
-  </data>
-  <data name="friendsInfoTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="friendsInfoTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>401, 138</value>
-  </data>
-  <data name="friendsInfoTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
-  </data>
-  <data name="friendsInfoTextBox.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;friendsInfoTextBox.Name" xml:space="preserve">
-    <value>friendsInfoTextBox</value>
-  </data>
-  <data name="&gt;&gt;friendsInfoTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;friendsInfoTextBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;friendsInfoTextBox.ZOrder" xml:space="preserve">
-    <value>8</value>
   </data>
   <data name="UserInfoTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
   <data name="UserInfoTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>614, 80</value>
+    <value>641, 80</value>
   </data>
   <data name="UserInfoTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -307,13 +274,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;UserInfoTextBox.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>14</value>
   </data>
   <data name="LastPostsButtom.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
   <data name="LastPostsButtom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>845, 6</value>
+    <value>872, 6</value>
   </data>
   <data name="LastPostsButtom.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -337,13 +304,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LastPostsButtom.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>17</value>
   </data>
   <data name="buttonSetStatus.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
   <data name="buttonSetStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 575</value>
+    <value>3, 602</value>
   </data>
   <data name="buttonSetStatus.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -367,7 +334,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonSetStatus.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>13</value>
   </data>
   <data name="logOutButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -397,13 +364,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;logOutButton.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>9</value>
   </data>
   <data name="textBoxStatus.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
   <data name="textBoxStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 651</value>
+    <value>3, 678</value>
   </data>
   <data name="textBoxStatus.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -430,13 +397,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;textBoxStatus.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>11</value>
   </data>
   <data name="profilePicture.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
   <data name="profilePicture.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 202</value>
+    <value>11, 229</value>
   </data>
   <data name="profilePicture.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -460,7 +427,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;profilePicture.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>7</value>
   </data>
   <data name="checkFriendsbutton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -472,7 +439,7 @@
     <value>Century Gothic, 12pt, style=Bold</value>
   </data>
   <data name="checkFriendsbutton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 454</value>
+    <value>3, 481</value>
   </data>
   <data name="checkFriendsbutton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>7, 7, 7, 7</value>
@@ -496,7 +463,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;checkFriendsbutton.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>12</value>
   </data>
   <data name="rememberMecheckBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -508,13 +475,13 @@
     <value>Century Gothic, 20pt, style=Bold</value>
   </data>
   <data name="rememberMecheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 366</value>
+    <value>11, 431</value>
   </data>
   <data name="rememberMecheckBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>7, 7, 7, 7</value>
   </data>
   <data name="rememberMecheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>477, 74</value>
+    <value>221, 36</value>
   </data>
   <data name="rememberMecheckBox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -532,7 +499,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;rememberMecheckBox.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>8</value>
   </data>
   <metadata name="timerForLotteryFriends.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>239, 17</value>
@@ -550,10 +517,10 @@
     <value>Century Gothic, 12pt, style=Bold</value>
   </data>
   <data name="ClickOnTheImageLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>298, 341</value>
+    <value>298, 368</value>
   </data>
   <data name="ClickOnTheImageLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>516, 86</value>
+    <value>226, 38</value>
   </data>
   <data name="ClickOnTheImageLabel.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -572,7 +539,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ClickOnTheImageLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>6</value>
   </data>
   <data name="welcomLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -584,7 +551,7 @@
     <value>288, 0</value>
   </data>
   <data name="welcomLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 108</value>
+    <value>0, 49</value>
   </data>
   <data name="welcomLabel.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -608,7 +575,7 @@
     <value>0, 0</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1132, 302</value>
+    <value>1159, 302</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -623,7 +590,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>18</value>
   </data>
   <metadata name="errorProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>594, 17</value>
@@ -638,7 +605,163 @@
     <value>None</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1132, 736</value>
+    <value>1159, 763</value>
+  </data>
+  <metadata name="aboutLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="aboutLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="aboutLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>637, 481</value>
+  </data>
+  <data name="aboutLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 21</value>
+  </data>
+  <data name="aboutLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="aboutLabel.Text" xml:space="preserve">
+    <value>About:</value>
+  </data>
+  <data name="&gt;&gt;aboutLabel.Name" xml:space="preserve">
+    <value>aboutLabel</value>
+  </data>
+  <data name="&gt;&gt;aboutLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;aboutLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;aboutLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="userBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>876, 17</value>
+  </metadata>
+  <data name="aboutTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>738, 478</value>
+  </data>
+  <data name="aboutTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 27</value>
+  </data>
+  <data name="aboutTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;aboutTextBox.Name" xml:space="preserve">
+    <value>aboutTextBox</value>
+  </data>
+  <data name="&gt;&gt;aboutTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;aboutTextBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;aboutTextBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="birthdayLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="birthdayLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="birthdayLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>637, 514</value>
+  </data>
+  <data name="birthdayLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 21</value>
+  </data>
+  <data name="birthdayLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="birthdayLabel.Text" xml:space="preserve">
+    <value>Birthday:</value>
+  </data>
+  <data name="&gt;&gt;birthdayLabel.Name" xml:space="preserve">
+    <value>birthdayLabel</value>
+  </data>
+  <data name="&gt;&gt;birthdayLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;birthdayLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;birthdayLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="birthdayTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>738, 511</value>
+  </data>
+  <data name="birthdayTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 27</value>
+  </data>
+  <data name="birthdayTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;birthdayTextBox.Name" xml:space="preserve">
+    <value>birthdayTextBox</value>
+  </data>
+  <data name="&gt;&gt;birthdayTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;birthdayTextBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;birthdayTextBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <metadata name="firstNameLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="firstNameLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="firstNameLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>637, 547</value>
+  </data>
+  <data name="firstNameLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 21</value>
+  </data>
+  <data name="firstNameLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="firstNameLabel.Text" xml:space="preserve">
+    <value>First Name:</value>
+  </data>
+  <data name="&gt;&gt;firstNameLabel.Name" xml:space="preserve">
+    <value>firstNameLabel</value>
+  </data>
+  <data name="&gt;&gt;firstNameLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;firstNameLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;firstNameLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="firstNameTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>738, 544</value>
+  </data>
+  <data name="firstNameTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 27</value>
+  </data>
+  <data name="firstNameTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;firstNameTextBox.Name" xml:space="preserve">
+    <value>firstNameTextBox</value>
+  </data>
+  <data name="&gt;&gt;firstNameTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;firstNameTextBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;firstNameTextBox.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 12pt</value>
@@ -669,6 +792,12 @@
   </data>
   <data name="&gt;&gt;errorProvider1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;userBindingSource1.Name" xml:space="preserve">
+    <value>userBindingSource1</value>
+  </data>
+  <data name="&gt;&gt;userBindingSource1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>FaceApp</value>

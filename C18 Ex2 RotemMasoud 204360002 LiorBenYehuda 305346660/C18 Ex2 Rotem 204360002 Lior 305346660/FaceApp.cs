@@ -25,8 +25,9 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
         private LoginResult m_loginResult;
         private List<Image> m_friendImeges = new List<Image>();
         private string m_welcomLabelMassage;
-        private readonly FaceAppLogic faceAppLogic = new FaceAppLogic();
-        private Facade faceAppFacade = new Facade();
+        private readonly FaceAppLogic r_faceAppLogic = new FaceAppLogic();
+        private readonly Facade r_faceAppFacade;
+          private User m_randomFriend;
 
         public FaceApp()
         {
@@ -36,7 +37,8 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
             InitializeComponent();
             r_Appsettings = Appsettings.LoadFromFile();
             setFormSize();
-        }
+            r_faceAppFacade = new Facade(r_faceAppLogic);
+     }
 
         private void setFormSize()
         {
@@ -61,7 +63,7 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
             {              
                 m_loginResult = FacebookService.Connect(r_Appsettings.LastAccesToken);
                 m_LoggedInUser = m_loginResult.LoggedInUser;
-                faceAppLogic.loggedInUser = m_LoggedInUser;
+                r_faceAppLogic.loggedInUser = m_LoggedInUser;
                 new Thread(fetchUserInfo).Start();
                 new Thread(fetchPosts).Start();
                 new Thread(fetchUserPersonalInfo).Start();
@@ -127,7 +129,7 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
             if (!string.IsNullOrEmpty(m_loginResult.AccessToken))
             {
                 m_LoggedInUser = m_loginResult.LoggedInUser;
-                faceAppLogic.loggedInUser = m_LoggedInUser;
+                r_faceAppLogic.loggedInUser = m_LoggedInUser;
                 new Thread(fetchUserInfo).Start();
             }
             else
@@ -148,7 +150,8 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
         {
             profilePicture.LoadAsync(m_LoggedInUser.PictureLargeURL);
             saveFriendsProfilePics();
-        }
+            
+          }
 
         private void saveFriendsProfilePics()
           {
@@ -164,7 +167,7 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
 
             if (m_LoggedInUser != null)
             {
-                faceAppLogic.SaveFriendsToFile();
+                FilesManager.GetInstance().SaveFriendsToFile(m_LoggedInUser);
                 m_welcomLabelMassage = string.Format("Welcome\n{0}", m_LoggedInUser.Name);
                 welcomLabel.Text = m_welcomLabelMassage;
             }
@@ -267,11 +270,10 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
         {
             if (m_LoggedInUser != null)
             {
-                string birthDayUser = m_LoggedInUser.Friends[i_RandomFriend].Birthday;
-                string genderUser = m_LoggedInUser.Friends[i_RandomFriend].Gender.ToString();
-                string IDUser = m_LoggedInUser.Friends[i_RandomFriend].Id;
-                friendsInfoTextBox.Text = string.Format("{4}\n{0} Birthday: {1}\n{0} Gender: {2}\n{0} ID: {3}", m_LoggedInUser.Friends[i_RandomFriend].FirstName, birthDayUser, genderUser, IDUser, m_LoggedInUser.Friends[i_RandomFriend].Name);
-            }
+
+                    userBindingSource1.DataSource = m_LoggedInUser.Friends[i_RandomFriend];
+                    m_randomFriend= m_LoggedInUser.Friends[i_RandomFriend];
+               }
         }
         //// -------------------------------------//
 
@@ -279,7 +281,7 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
         private void buttonCheckLeftFriends_Click(object sender, EventArgs e)
         {
 
-             bool isfriendLeft = faceAppFacade.CheckLeftFriends();
+             bool isfriendLeft = r_faceAppFacade.CheckLeftFriends();
 
                if (isfriendLeft)
                {
@@ -338,6 +340,13 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
           {
                timerForLotteryFriends.Interval += 100;
           }
+     
+          private void aboutTextBox_Validating(object sender, CancelEventArgs e)
+          {
+               m_randomFriend.About = aboutTextBox.Text;
+          }
+
+
 
           ////---------------------------------//
      }
