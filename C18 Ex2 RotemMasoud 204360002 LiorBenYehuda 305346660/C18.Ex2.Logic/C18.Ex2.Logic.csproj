@@ -41,10 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Facebook">
-      <HintPath>..\C18 Ex1 Rotem 204360002 Lior 305346660\Facebook.dll</HintPath>
+      <HintPath>.\Facebook.dll</HintPath>
     </Reference>
     <Reference Include="FbGraphApiWrapper">
-      <HintPath>..\C18 Ex1 Rotem 204360002 Lior 305346660\FbGraphApiWrapper.dll</HintPath>
+      <HintPath>.\FbGraphApiWrapper.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />

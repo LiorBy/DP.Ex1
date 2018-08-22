@@ -237,7 +237,6 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
             m_LoggedInUser = null;
             this.rememberMecheckBox.Checked = false;
             UserInfoTextBox.Clear();
-            friendsInfoTextBox.Clear();
             lastPostsListBox.Items.Clear();
             pictureBoxRandomFriendProfilePic.Image = null;
             welcomLabel.Text = string.Empty;
@@ -295,7 +294,6 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
 
         private void pictureRandom()
           {
-               friendsInfoTextBox.Clear();
                timerForLotteryFriends.Enabled = false;
                Random randomPic = new Random();
                if (m_LoggedInUser == null)
