@@ -1,8 +1,8 @@
-﻿using FacebookWrapper.ObjectModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using FacebookWrapper.ObjectModel;
 
 namespace C18.Ex2.Logic
 {
@@ -14,6 +14,7 @@ namespace C18.Ex2.Logic
           {
                logic = i_FaceAppLogic;
           }
+
           private List<string> m_FriendsFromFile;
 
           public bool CheckLeftFriends()
@@ -31,11 +32,9 @@ namespace C18.Ex2.Logic
                          isFriendLeft = true;
                          FilesManager.GetInstance().updateFriendsToFile(logic.loggedInUser);
                     }
-
                }
 
                     return isFriendLeft;
             }
-
      }
 }

@@ -1,12 +1,12 @@
-﻿using FacebookWrapper;
-using FacebookWrapper.ObjectModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Xml.Serialization;
+using FacebookWrapper;
+using FacebookWrapper.ObjectModel;
 
 namespace C18.Ex2.Logic
 {
@@ -16,7 +16,6 @@ namespace C18.Ex2.Logic
           
           public FaceAppLogic()
           {
-
           }
 
           internal IEnumerable<string> compareFriends(List<string> i_FriendsFromFile)

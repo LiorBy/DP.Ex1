@@ -9,25 +9,25 @@ using System.Text;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 using System.IO;
+using System.Threading;
 using Facebook;
 using FacebookWrapper.ObjectModel;
 using FacebookWrapper;
-using System.Threading;
 using C18.Ex2.Logic;
-
 
 namespace C18_Ex1_Rotem_204360002_Lior_305346660
 {
     public partial class FaceApp : Form
     {
+        private readonly FaceAppLogic r_faceAppLogic = new FaceAppLogic();
+        private readonly Facade r_faceAppFacade;
         private readonly Appsettings r_Appsettings;
         private User m_LoggedInUser;
         private LoginResult m_loginResult;
         private List<Image> m_friendImeges = new List<Image>();
         private string m_welcomLabelMassage;
-        private readonly FaceAppLogic r_faceAppLogic = new FaceAppLogic();
-        private readonly Facade r_faceAppFacade;
-          private User m_randomFriend;
+        
+        private User m_randomFriend;
 
         public FaceApp()
         {
@@ -54,7 +54,6 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
         protected override void OnShown(EventArgs e)
         {
             new Thread(autoLogIn).Start();
-            //autoLogIn();
         }
       
         private void autoLogIn()
@@ -67,9 +66,6 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
                 new Thread(fetchUserInfo).Start();
                 new Thread(fetchPosts).Start();
                 new Thread(fetchUserPersonalInfo).Start();
-                
-                //fetchPosts();
-                //fetchUserPersonalInfo();
                 m_welcomLabelMassage = string.Format("Welcome back\n{0}", m_LoggedInUser.Name);
                 welcomLabel.Invoke(new Action(() => welcomLabel.Text = m_welcomLabelMassage));
             }
@@ -149,17 +145,16 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
         private void fetchUserInfo()
         {
             profilePicture.LoadAsync(m_LoggedInUser.PictureLargeURL);
-            saveFriendsProfilePics();
-            
-          }
+            saveFriendsProfilePics();         
+        }
 
         private void saveFriendsProfilePics()
-          {
+        {
                foreach (User friend in m_LoggedInUser.Friends)
                {
                     m_friendImeges.Add(friend.ImageNormal);
                }
-          }
+        }
 
         private void connectButton_Click(object sender, EventArgs e)
         {
@@ -255,8 +250,7 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
                 string genderUser = m_LoggedInUser.Gender.ToString();
                 string IDUser = m_LoggedInUser.Id;
                 UserInfoTextBox.Invoke(new Action(() => 
-                UserInfoTextBox.Text = string.Format("{0} BirthDay {1}\n{0} Gender: {2}\n{0} ID: {3}",
-                m_LoggedInUser.FirstName, birthDayUser, genderUser, IDUser)));
+                UserInfoTextBox.Text = string.Format("{0} BirthDay {1}\n{0} Gender: {2}\n{0} ID: {3}", m_LoggedInUser.FirstName, birthDayUser, genderUser, IDUser)));             
             }
         }
         //// --- Lottery friens feature
@@ -269,17 +263,15 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
         {
             if (m_LoggedInUser != null)
             {
-
                     userBindingSource1.DataSource = m_LoggedInUser.Friends[i_RandomFriend];
-                    m_randomFriend= m_LoggedInUser.Friends[i_RandomFriend];
-               }
+                    m_randomFriend = m_LoggedInUser.Friends[i_RandomFriend];
+            }
         }
         //// -------------------------------------//
 
         //// --Unfiend feature
         private void buttonCheckLeftFriends_Click(object sender, EventArgs e)
         {
-
              bool isfriendLeft = r_faceAppFacade.CheckLeftFriends();
 
                if (isfriendLeft)
@@ -322,7 +314,7 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
           {
                Random randomPic = new Random();
                int ran = 0;
-               ran = randomPic.Next(0, m_LoggedInUser.Friends.Count);
+               ran = randomPic.Next(0, m_friendImeges.Count);
                pictureBoxRandomFriendProfilePic.Image = m_friendImeges[ran];
                if (timerForLotteryFriends.Interval >= 500)
                {
@@ -343,8 +335,6 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
           {
                m_randomFriend.About = aboutTextBox.Text;
           }
-
-
 
           ////---------------------------------//
      }

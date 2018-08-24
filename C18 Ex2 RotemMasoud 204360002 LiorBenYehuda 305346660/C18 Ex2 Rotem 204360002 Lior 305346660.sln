@@ -5,8 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E77A43B3-4A8A-4C63-BE04-02F03BED6AA5}"
 	ProjectSection(SolutionItems) = preProject
-		C18 Ex1 Rotem 204360002 Lior 305346660\C18 Ex1 Exercise Checking Report.txt = C18 Ex1 Rotem 204360002 Lior 305346660\C18 Ex1 Exercise Checking Report.txt
-		C18 Ex1 Rotem 204360002 Lior 305346660\C18 Ex1 Rotem 204360002 Lior 305346660.docx = C18 Ex1 Rotem 204360002 Lior 305346660\C18 Ex1 Rotem 204360002 Lior 305346660.docx
+		C18 Ex2 Exercise Checking Report.txt = C18 Ex2 Exercise Checking Report.txt
+		C18 Ex2 Rotem 204360002 Lior 305346660.docx = C18 Ex2 Rotem 204360002 Lior 305346660.docx
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C18.Ex2.Logic", "C18.Ex2.Logic\C18.Ex2.Logic.csproj", "{FE54A775-41C7-4EFF-A8FD-1B7AEB8AEF34}"

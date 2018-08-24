@@ -1,8 +1,8 @@
 ==========================Exercise Checking Report==========================
-Exercise No...........: 1
+Exercise No...........: 2
 First Student Details.: 204360002 - Rotem Masoud
 Second Student Details: 305346660 -  Lior Ben Yehuda
-Delivery Date.........: 02 - August - 2018
+Delivery Date.........: 27 - August - 2018
 Delivered In Delay....: No
 Delay Reason..........: -
 Comments..............:
