@@ -38,7 +38,7 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
             r_Appsettings = Appsettings.LoadFromFile();
             setFormSize();
             r_faceAppFacade = new Facade(r_faceAppLogic);
-     }
+        }
 
         private void setFormSize()
         {
@@ -285,7 +285,7 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
          }
 
         private void pictureRandom()
-          {
+        {
                timerForLotteryFriends.Enabled = false;
                Random randomPic = new Random();
                if (m_LoggedInUser == null)
@@ -311,7 +311,7 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
           }
 
         private void timerForLotteryFriends_Tick(object sender, EventArgs e)
-          {
+        {
                Random randomPic = new Random();
                int ran = 0;
                ran = randomPic.Next(0, m_friendImeges.Count);
@@ -327,15 +327,17 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
           }
 
         private void timerHelper_Tick(object sender, EventArgs e)
-          {
+        {
                timerForLotteryFriends.Interval += 100;
-          }
+        }
      
-          private void aboutTextBox_Validating(object sender, CancelEventArgs e)
-          {
-               m_randomFriend.About = aboutTextBox.Text;
-          }
-
+        private void aboutTextBox_Validating(object sender, CancelEventArgs e)
+        {
+               if (m_LoggedInUser != null)
+               {
+                    m_randomFriend.About = aboutTextBox.Text;
+               }
+         }
           ////---------------------------------//
      }
 }

@@ -117,6 +117,98 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="aboutLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="aboutLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="aboutLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>637, 481</value>
+  </data>
+  <data name="aboutLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 21</value>
+  </data>
+  <data name="aboutLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="aboutLabel.Text" xml:space="preserve">
+    <value>About:</value>
+  </data>
+  <data name="&gt;&gt;aboutLabel.Name" xml:space="preserve">
+    <value>aboutLabel</value>
+  </data>
+  <data name="&gt;&gt;aboutLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;aboutLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;aboutLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="birthdayLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="birthdayLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="birthdayLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>637, 514</value>
+  </data>
+  <data name="birthdayLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 21</value>
+  </data>
+  <data name="birthdayLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="birthdayLabel.Text" xml:space="preserve">
+    <value>Birthday:</value>
+  </data>
+  <data name="&gt;&gt;birthdayLabel.Name" xml:space="preserve">
+    <value>birthdayLabel</value>
+  </data>
+  <data name="&gt;&gt;birthdayLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;birthdayLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;birthdayLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="firstNameLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="firstNameLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="firstNameLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>637, 547</value>
+  </data>
+  <data name="firstNameLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 21</value>
+  </data>
+  <data name="firstNameLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="firstNameLabel.Text" xml:space="preserve">
+    <value>First Name:</value>
+  </data>
+  <data name="&gt;&gt;firstNameLabel.Name" xml:space="preserve">
+    <value>firstNameLabel</value>
+  </data>
+  <data name="&gt;&gt;firstNameLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;firstNameLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;firstNameLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="connectButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -124,7 +216,6 @@
   <data name="connectButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="connectButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 16</value>
   </data>
@@ -134,7 +225,6 @@
   <data name="connectButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>288, 83</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="connectButton.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -607,36 +697,6 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1159, 763</value>
   </data>
-  <metadata name="aboutLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="aboutLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="aboutLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>637, 481</value>
-  </data>
-  <data name="aboutLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 21</value>
-  </data>
-  <data name="aboutLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="aboutLabel.Text" xml:space="preserve">
-    <value>About:</value>
-  </data>
-  <data name="&gt;&gt;aboutLabel.Name" xml:space="preserve">
-    <value>aboutLabel</value>
-  </data>
-  <data name="&gt;&gt;aboutLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;aboutLabel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;aboutLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <metadata name="userBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>876, 17</value>
   </metadata>
@@ -661,36 +721,6 @@
   <data name="&gt;&gt;aboutTextBox.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="birthdayLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="birthdayLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="birthdayLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>637, 514</value>
-  </data>
-  <data name="birthdayLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 21</value>
-  </data>
-  <data name="birthdayLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="birthdayLabel.Text" xml:space="preserve">
-    <value>Birthday:</value>
-  </data>
-  <data name="&gt;&gt;birthdayLabel.Name" xml:space="preserve">
-    <value>birthdayLabel</value>
-  </data>
-  <data name="&gt;&gt;birthdayLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;birthdayLabel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;birthdayLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="birthdayTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>738, 511</value>
   </data>
@@ -711,36 +741,6 @@
   </data>
   <data name="&gt;&gt;birthdayTextBox.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <metadata name="firstNameLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="firstNameLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="firstNameLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>637, 547</value>
-  </data>
-  <data name="firstNameLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 21</value>
-  </data>
-  <data name="firstNameLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="firstNameLabel.Text" xml:space="preserve">
-    <value>First Name:</value>
-  </data>
-  <data name="&gt;&gt;firstNameLabel.Name" xml:space="preserve">
-    <value>firstNameLabel</value>
-  </data>
-  <data name="&gt;&gt;firstNameLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;firstNameLabel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;firstNameLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="firstNameTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>738, 544</value>
@@ -805,4 +805,7 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <metadata name="userBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>876, 17</value>
+  </metadata>
 </root>
