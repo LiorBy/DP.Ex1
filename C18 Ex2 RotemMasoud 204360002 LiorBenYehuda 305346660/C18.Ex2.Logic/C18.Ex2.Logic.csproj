@@ -38,6 +38,7 @@
     <Compile Include="Facade.cs" />
     <Compile Include="FaceAppLogic.cs" />
     <Compile Include="FilesManager.cs" />
+    <Compile Include="MissingFriends.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Facebook">
