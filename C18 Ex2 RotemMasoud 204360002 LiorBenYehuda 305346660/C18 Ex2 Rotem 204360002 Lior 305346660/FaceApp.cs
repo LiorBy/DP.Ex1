@@ -26,9 +26,8 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
         private LoginResult m_loginResult;
         private List<Image> m_friendImeges = new List<Image>();
         private string m_welcomLabelMassage;
-        
         private User m_randomFriend;
-
+       
         public FaceApp()
         {
             int h = Screen.PrimaryScreen.WorkingArea.Height;
@@ -38,7 +37,7 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
             r_Appsettings = Appsettings.LoadFromFile();
             setFormSize();
             r_faceAppFacade = new Facade(r_faceAppLogic);
-     }
+        }
 
         private void setFormSize()
         {
@@ -272,11 +271,18 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
         //// --Unfiend feature
         private void buttonCheckLeftFriends_Click(object sender, EventArgs e)
         {
-             bool isfriendLeft = r_faceAppFacade.CheckLeftFriends();
+             MissingFriends Friends = r_faceAppFacade.CheckLeftFriends();
 
-               if (isfriendLeft)
+               if (Friends.missingFriends.Count() > 0)
                {
-                    MessageBox.Show("someone in the friend list had left :(");
+                    StringBuilder MissingFriendsnames = new StringBuilder();
+
+                    foreach (string missedFriend in Friends)
+                    {
+                         MissingFriendsnames.AppendLine(missedFriend);
+                    }
+
+                    MessageBox.Show(string.Format("the friend that left you are: {0} {1} ", Environment.NewLine, MissingFriendsnames));
                }
                else
                {
@@ -285,7 +291,7 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
          }
 
         private void pictureRandom()
-          {
+        {
                timerForLotteryFriends.Enabled = false;
                Random randomPic = new Random();
                if (m_LoggedInUser == null)
@@ -311,7 +317,7 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
           }
 
         private void timerForLotteryFriends_Tick(object sender, EventArgs e)
-          {
+        {
                Random randomPic = new Random();
                int ran = 0;
                ran = randomPic.Next(0, m_friendImeges.Count);
@@ -327,15 +333,17 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
           }
 
         private void timerHelper_Tick(object sender, EventArgs e)
-          {
+        {
                timerForLotteryFriends.Interval += 100;
-          }
+        }
      
-          private void aboutTextBox_Validating(object sender, CancelEventArgs e)
-          {
-               m_randomFriend.About = aboutTextBox.Text;
-          }
-
+        private void aboutTextBox_Validating(object sender, CancelEventArgs e)
+        {
+               if (m_LoggedInUser != null)
+               {
+                    m_randomFriend.About = aboutTextBox.Text;
+               }
+         }
           ////---------------------------------//
      }
 }

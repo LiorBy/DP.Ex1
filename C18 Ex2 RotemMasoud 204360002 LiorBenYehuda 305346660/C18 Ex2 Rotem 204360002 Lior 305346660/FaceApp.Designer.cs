@@ -32,8 +32,8 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
         private void InitializeComponent()
         {   
                this.components = new System.ComponentModel.Container();
-               System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FaceApp));
                System.Windows.Forms.Label aboutLabel;
+               System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FaceApp));
                System.Windows.Forms.Label birthdayLabel;
                System.Windows.Forms.Label firstNameLabel;
                this.connectButton = new System.Windows.Forms.Button();
@@ -67,6 +67,21 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
                ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
                ((System.ComponentModel.ISupportInitialize)(this.userBindingSource1)).BeginInit();
                this.SuspendLayout();
+               // 
+               // aboutLabel
+               // 
+               resources.ApplyResources(aboutLabel, "aboutLabel");
+               aboutLabel.Name = "aboutLabel";
+               // 
+               // birthdayLabel
+               // 
+               resources.ApplyResources(birthdayLabel, "birthdayLabel");
+               birthdayLabel.Name = "birthdayLabel";
+               // 
+               // firstNameLabel
+               // 
+               resources.ApplyResources(firstNameLabel, "firstNameLabel");
+               firstNameLabel.Name = "firstNameLabel";
                // 
                // connectButton
                // 
@@ -204,11 +219,6 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
                // 
                this.userBindingSource1.DataSource = typeof(FacebookWrapper.ObjectModel.User);
                // 
-               // aboutLabel
-               // 
-               resources.ApplyResources(aboutLabel, "aboutLabel");
-               aboutLabel.Name = "aboutLabel";
-               // 
                // aboutTextBox
                // 
                this.aboutTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.userBindingSource1, "About", true));
@@ -216,21 +226,11 @@ namespace C18_Ex1_Rotem_204360002_Lior_305346660
                this.aboutTextBox.Name = "aboutTextBox";
                this.aboutTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.aboutTextBox_Validating);
                // 
-               // birthdayLabel
-               // 
-               resources.ApplyResources(birthdayLabel, "birthdayLabel");
-               birthdayLabel.Name = "birthdayLabel";
-               // 
                // birthdayTextBox
                // 
                this.birthdayTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.userBindingSource1, "Birthday", true));
                resources.ApplyResources(this.birthdayTextBox, "birthdayTextBox");
                this.birthdayTextBox.Name = "birthdayTextBox";
-               // 
-               // firstNameLabel
-               // 
-               resources.ApplyResources(firstNameLabel, "firstNameLabel");
-               firstNameLabel.Name = "firstNameLabel";
                // 
                // firstNameTextBox
                // 
