@@ -1,24 +1,23 @@
-﻿using FacebookWrapper;
-using FacebookWrapper.ObjectModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Xml.Serialization;
+using FacebookWrapper;
+using FacebookWrapper.ObjectModel;
 
 namespace C18.Ex2.Logic
 {
-     public sealed  class FilesManager
-     {
-          private readonly string r_Path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+     public sealed class FilesManager
+     { 
           private static readonly object sr_padlock = new object();
           private static FilesManager s_FilesManager = null;
+          private readonly string r_Path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
 
           private FilesManager()
           {
-
           }
 
           public static FilesManager GetInstance()
@@ -31,8 +30,7 @@ namespace C18.Ex2.Logic
                     {
                          if (s_FilesManager == null)
                          {
-                                   s_FilesManager = new FilesManager();
-                           
+                                   s_FilesManager = new FilesManager();                         
                          }
                     }
                }
@@ -66,7 +64,7 @@ namespace C18.Ex2.Logic
                     return m_FriendsFromFile;
                }
 
-               //SaveFriendsProfilePics();
+               ///SaveFriendsProfilePics();
           }
 
           public void SaveFriendsToFile(User i_LoggedInUser)

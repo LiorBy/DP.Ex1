@@ -41,10 +41,17 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Facebook">
+<<<<<<< HEAD
       <HintPath>..\..\..\..\..\Desktop\שנה ב'\סמסטר קיץ\Design Patterns\01_FB01_BasicFacebookFeatures.V6.8.0.17\FBApi\Facebook.dll</HintPath>
     </Reference>
     <Reference Include="FbGraphApiWrapper">
       <HintPath>..\..\..\..\..\Desktop\שנה ב'\סמסטר קיץ\Design Patterns\01_FB01_BasicFacebookFeatures.V6.8.0.17\FBApi\FbGraphApiWrapper.dll</HintPath>
+=======
+      <HintPath>.\Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="FbGraphApiWrapper">
+      <HintPath>.\FbGraphApiWrapper.dll</HintPath>
+>>>>>>> 5bc6fdab9a8e99e5bf02c14f71667d1604608af9
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
